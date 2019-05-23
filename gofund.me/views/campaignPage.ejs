@@ -1,0 +1,33 @@
+<DOCTYPE html>
+	<html>
+
+	<head>
+		<title>Create a fund</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/campaignStyle.css">
+		<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+		<script type="text/javascript" src="javascripts/loginJS.js"></script>
+	</head>
+
+	<body class="bodyLogin" onload="addTitle()">
+		<div class="topFooter">
+			<p id="mainTitle" class="title"></p>
+			<button type="button" id="startFund" class="logOut" onclick="">Log out</button>
+		</div>
+
+		<div class="formDiv">
+			<input type="text" id="value" class="valueInput" placeholder=" Introduce you target value here...">
+			<input type="text" id="iban" class="ibanInput" placeholder=" Target IBAN">
+			<textarea id="description" class="description" placeholder= " Add a description to your campaign here..."></textarea>
+			<p class="p1">If you wish to add another responsible to this campaign, add their user id here (2 person limit)</p>
+			<input type="text" id="id1" class="id1" placeholder=" 1º responsible´s ID">
+			<input type="text" id="id1" class="id2" placeholder=" 2º responsible´s ID">
+			<button type="button" id="createCampaign" class="createButton" onclick="">Create campaign</button>
+			<button type="button" id="backToMenu" class="back" onclick="redirectToMenu()">Back to menu</button>
+		</div>
+
+		<div class="photoDef"></div>
+		<button type="button" id="upload" class="uploadButton" onclick="">Upload a logo</button>
+
+	</body>
+
+	</html>

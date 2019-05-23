@@ -1,0 +1,124 @@
+<DOCTYPE html>
+	<html>
+
+	<head>
+		<title>gofund.me</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/loginCSS.css">
+		<script type="text/javascript" src="javascripts/loginJS.js"></script>
+		<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+	</head>
+
+	<body class="topFooter">
+		<p class="title">gofund.me</p>
+		<input type="text" id="search" class="searchBar" placeholder="Search for donations...">
+		<button type="button" id="signIn" class="sign">Sign in</button>
+		<button type="button" id="startFund" class="fund">Login to gofund.me</button>
+
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p class="tituloLogin">Login de utilizador:</p>
+				<input class="usernameInput" type="text" id="usernameInput" placeholder=" Email">
+				<input class="passwordInput" type="password" id="passwordInput" placeholder=" Password">
+				<button type="button" id="loginButton" class="loginButton" onclick="">Login</button>
+				<button type="button" id="backButton" class="backButton" onclick="closeRegistry2()">Back</button>
+                <p class="bottomParagraphLogin">2018-2019 gofund.me Trademark</p>
+
+                <script>
+                    function closeRegistry2(){
+                        var modal3 = document.getElementById('myModal');
+                        modal3.style.display = "none";
+                    }
+                </script>
+			</div>
+		</div>
+
+		<script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+        // Get the button that opens the modal
+        var btn = document.getElementById("startFund");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks the button, open the modal      
+        btn.onclick = function() {
+        	modal.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+        	modal.style.display = "none";
+        }
+    </script>
+
+    <p class="choose">Choose a type of fundraise:</p>
+
+    <div id="fundMe" class="fundMeDiv"></div>
+    <button type="button" id="fundMeBtn" onclick="redirectToCampaignForMe()" class="fundMeButton">For me</button>
+
+    <button type="button" id="fundFriend" onclick="redirectToCampaignForFriend()" class="fundFriendButton">For a friend</button>
+    <div id="fundFriend" class="fundFriendDiv"></div>
+
+    <button type="button" id="fundInst" onclick="redirectToCampaignForInst()" class="fundInstButton">For charity</button>
+    <div id="fundInstitution" class="fundInstDiv"></div>
+
+    <button type="button" id="myFunds" onclick="" class="myFundsButton">My profile</button>
+    <div id="myFunds" class="myFundsDiv"></div>
+
+    <div class="bottomFooter">
+    	<p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+    </div>
+
+    <div id="myModal2" class="modal2">
+    	<div class="modal-content2">
+    		<span class="close2">&times;</span>
+    		<p class="tituloLogin">Create a new account:</p>
+    		<br>
+    		<p class="nomeTxt">Name: </p>
+    		<p class="adressTxt">Adress: </p>
+    		<p class="emailTxt">Email adress:</p>
+    		<p class="nifTXT">NIF: </p>
+    		<p class="ibanTXT">IBAN: </p>
+    		<p class="passTxt">Password: </p>
+    		<p class="confPassTxt">Confirm Password: </p>
+
+    		<input type="textfield" id="nome" class="nomeInput" placeholder="Your name">
+    		<input type="textfield" id="morada" class="moradaInput" placeholder="Your adress">
+    		<input type="textfield" id="email" class="emailInput" placeholder="Your email">
+    		<input type="textfield" id="nif" class="nifInput" placeholder="Your NIF">
+    		<input type="textfield" id="iban" class="ibanInput" placeholder="Your IBAN">
+    		<input type="password" id="password" class="passInput" placeholder="Choose a password">
+    		<input type="password" id="confPass" class="confPassInput" placeholder="Confirm password">
+
+    		<button type="button" id="seePassword" class="seePass" onclick="seePassword()"></button>
+    		<button type="button" id="registerBtn" class="registerBtn" onclick="">Register</button>
+    		<button type="button" id="voltarBtn" class="voltarBtn" onclick="closeRegistry()">Cancel</button>
+
+    		<script>
+    			function closeRegistry(){
+    				var modal2 = document.getElementById('myModal2');
+    				modal2.style.display = "none";
+    			}
+    		</script>
+    	</div>
+    </div>
+
+    <script>
+        // Get the modal2
+        var modal2 = document.getElementById('myModal2');
+        // Get the button that opens the modal2
+        var btn2 = document.getElementById("signIn");
+        // Get the <span> element that closes the modal
+        var span2 = document.getElementsByClassName("close2")[0];
+        // When the user clicks the button, open the modal 2
+        btn2.onclick = function() {
+        	modal2.style.display = "block";
+        }
+        // When the user clicks on <span> (x), close the modal2
+        span2.onclick = function() {
+        	modal2.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

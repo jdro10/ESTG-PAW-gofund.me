@@ -1,0 +1,599 @@
+.topFooter{
+	position: relative;
+	width: 100%;
+	margin: auto;
+	height: 14%;
+	box-shadow: 0px 1px 5px #888888;
+	background-color: rgba(255,255,255,0.6);
+}
+
+.title{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 20px;
+	font-weight: bold;
+	color: green;
+	width: 150px;
+	position: fixed;
+	top: 4%;
+	left: 47%;
+}
+
+.choose{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 25px;
+	font-weight: bold;
+	color: black;
+	position: fixed;
+	top: 18%;
+	left: 4.1%;
+}
+
+.fund{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 15px;
+	position: fixed;
+	top: 6.4%;
+	left: 90%;
+	color: green;
+	border: solid;
+	border-width: thin;
+	border-color: green;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.sign{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 15px;
+	position: fixed;
+	top: 6.4%;
+	left: 85%;
+	color: black;
+	background-color: transparent;
+	border: solid;
+	border-width: thin;
+	border-color: transparent;
+	border-radius: 3px;
+}
+
+.searchBar{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	float: left;
+	padding: 6px;
+	border: solid;
+	border-width: thin;
+	border-radius: 3px;
+	margin-top: 51px;
+	margin-left: 35px;
+	font-size: 12px;
+	width: 20%;
+}
+
+/* The Modal (background) */
+.modal {
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 12px;
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-image: url(../images/login.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+	padding: 20px;
+	border: solid;
+	border-width: thin;
+	width: 50%;
+	height: 70%;
+	border-radius: 4px;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.tituloLogin{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+.usernameInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 30%;
+	height: 35px;
+	position: fixed;
+	top: 40%;
+	left: 35%;
+}
+
+.passwordInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 30%;
+	height: 35px;
+	position: fixed;
+	top: 46%;
+	left: 35%;
+}
+
+.loginButton{
+	height: 4.5%;
+	width: 12%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	background-color: #1a72e7;
+	color: white;
+	font-size: 14px;
+	position: fixed;
+	margin-top: 18%;
+	margin-left: 28.1%;
+}
+
+.backButton{
+	height: 4.5%;
+	width: 12%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	background-color: grey;
+	color: white;
+	font-size: 14px;
+	position: fixed;
+	margin-top: 18%;
+	margin-left: 10%;
+}
+
+.fundMeButton{
+	height: 6.2%;
+	width: 20%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	border-color: black;
+	background-color: white;
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 15px;
+	font-weight: bold;
+	position: fixed;
+	top: 67.5%; 
+	left: 4.1%;
+}
+
+.fundFriendButton{
+	height: 6.2%;
+	width: 20%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	border-color: black;
+	background-color: white;
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 15px;
+	font-weight: bold;
+	position: fixed;
+	top: 67.5%; 
+	left: 28.1%;
+}
+
+.fundInstButton{
+	height: 6.2%;
+	width: 20%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	border-color: black;
+	background-color: white;
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 15px;
+	font-weight: bold;
+	position: fixed;
+	top: 67.5%; 
+	left: 52.1%;
+}
+
+.myFundsButton{
+	height: 6.2%;
+	width: 20%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	border-color: black;
+	background-color: white;
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 15px;
+	font-weight: bold;
+	position: fixed;
+	top: 67.5%; 
+	left: 76.1%;
+}
+
+.fundMeDiv{
+	height: 36.1%;
+	width: 19.99%;
+	background-image: url(../images/forMe.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: solid;
+	border-width: thin;
+	border-color: transparent;
+	position: fixed;
+	top: 30.17%; 
+	left: 4.064%;
+}
+
+.fundFriendDiv{
+	height: 36.1%;
+	width: 19.98%;
+	background-image: url(../images/friend.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: solid;
+	border-width: thin;
+	border-color: transparent;
+	position: fixed;
+	top: 30.17%; 
+	left: 28.099%;
+}
+
+.fundInstDiv{
+	height: 36.1%;
+	width: 19.98%;
+	background-image: url(../images/charity.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: solid;
+	border-width: thin;
+	border-color: transparent;
+	position: fixed;	
+	top: 30.17%; 
+	left: 52.049%;
+}
+
+.myFundsDiv{
+	height: 36.1%;
+	width: 19.98%;
+	background-image: url(../images/myFunds.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: solid;
+	border-width: thin;
+	border-color: transparent;
+	position: fixed;
+	top: 30.17%; 
+	left: 76.049%;
+}
+
+.forMe{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	position: fixed;
+	top: 67%;
+	left: 11.5%;
+}
+
+.forFriend{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	position: fixed;
+	top: 67%;
+	left: 34.5%;
+}
+
+.forInst{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	position: fixed;
+	top: 67%;
+	left: 58.5%;
+}
+
+.myFundsParagraph{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	position: fixed;
+	top: 67%;
+	left: 83%;
+}
+
+.bottomParagraph{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: grey;
+	position: fixed;
+	bottom: 2.4%;
+	left: 5%;
+}
+
+.bottomParagraphLogin{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+	position: fixed;
+	bottom: 16%;
+	left: 25%;
+}
+
+.bottomFooter{
+	position: fixed;
+	width: 100%;
+	margin: auto;
+	height: 10%;
+	bottom: 0;
+	box-shadow: 0px 1px 5px #888888;
+	background-color: rgba(255,255,255,0.6);
+}
+
+/*Modal para a parte do sign in tem de ser duplicado caso contrário o pograma lê sempre o mesmo que aparece primeiro que
+neste caso é o de login*/
+
+.modal2 {
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 12px;
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content2 {
+	background-image: url(../images/sign.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: auto;
+	padding: 20px;
+	border: solid;
+	border-width: thin;
+	width: 50%;
+	height: 70%;
+	border-radius: 4px;
+}
+
+/* The Close Button */
+.close2 {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.nomeTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 13px;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 25.6%;
+	left: 25.8%;
+}
+
+.adressTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 13px;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 30%;
+	left: 25.8%;
+}
+
+.emailTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 13px;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 34.4%;
+	left: 25.8%;
+}
+
+.nifTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 13px;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 42%;
+	left: 25.8%;
+}
+
+.ibanTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 13px;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 46.4%;
+	left: 25.8%;
+}
+
+.passTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 100%;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 54.2%;
+	left: 25.8%;
+}
+
+.confPassTxt{
+	font-family: 'Arial', "Helvetica Neue" , Helvetica;
+	font-size: 100%;
+	color: white;
+	font-weight: bold;
+	position: fixed;
+	top: 58.6%;
+	left: 25.8%;
+}
+
+.nomeInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 26.6%;
+	left: 36%;
+}
+
+.moradaInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 31%;
+	left: 36%;
+}
+
+.emailInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 35.5%;
+	left: 36%;
+}
+
+.nifInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 43%;
+	left: 36%;
+}
+
+.ibanInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 47.5%;
+	left: 36%;
+}
+
+.passInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 55%;
+	left: 36%;
+}
+
+.confPassInput{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 3px;
+	width: 35%;
+	height: 3%;
+	position: fixed;
+	top: 59.5%;
+	left: 36%;
+}
+
+.seePass{
+	width: 28;
+	height: 27.5;
+	position: fixed;
+	top: 59.5%;
+	left: 72.3%;
+	border-radius: 100px;
+	background-image: url(../images/sunglasses.png);
+	background-color: transparent;
+	border-color: transparent;
+	border-style: solid;
+}
+
+.registerBtn {
+	height: 4.5%;
+	width: 12%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	background-color: #1a72e7;
+	color: white;
+	font-size: 14px;
+	position: fixed;
+	margin-top: 30%;
+	margin-left: 37%;
+}
+
+.voltarBtn{
+	height: 4.5%;
+	width: 12%;
+	border-radius: 3px;
+	border: solid;
+	border-width: thin;
+	background-color: grey;
+	color: white;
+	font-size: 14px;
+	position: fixed;
+	margin-top: 30%;
+	margin-left: 1%;
+}
