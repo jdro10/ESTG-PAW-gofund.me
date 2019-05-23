@@ -2,12 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-/* GET home page. */
-router.get('/LoginPage', function(req, res, next) {
+router.get('/loginPage', function(req, res, next) {
   res.render('loginPage', { title: 'Express' });
 }); 
 
@@ -21,6 +16,10 @@ router.get('/CampaignPageForFriend', function(req, res, next) {
 
 router.get('/CampaignPageForInst', function(req, res, next) {	 
   res.render('campaignPage', { title: 'Express' });
+});
+
+router.get('/searchDonations', function(req, res, next) {	 
+  res.render('donationSearchPage', { title: 'Express' });
 });
 
 module.exports = router;
