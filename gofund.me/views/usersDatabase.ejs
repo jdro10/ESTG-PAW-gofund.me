@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BASE DE DADOS UTILIZADORES</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>LISTA UTILIZADORES REGISTADOS</h1>
+    <% if(users.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Password</th>
+          <th>Morada</th>
+          <th>Email</th>
+          <th>NIF</th>
+          <th>IBAN</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i < users.length; i++) { %>
+          <tr>
+            <td><a href="/users/show/<%= users[i]._id %>"><%= users[i].username %></a></td>
+            <td><%= users[i].password %></td>
+            <td><%= users[i].morada %></td>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].nif %></td>
+            <td><%= users[i].iban %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% }else{ %>
+    <h1>Não existem utilizadores registados</h1>
+    <% } %>
+  </body>
+</html>

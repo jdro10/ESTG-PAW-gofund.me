@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Detalhes utilizador</title>
+</head>
+<body>
+    <h1>Detalhes utilizador</h1>
+    <p>Username: <%= user.username %></p>
+    <p>Password: <%= user.password %></p>
+    <p>IBAN: <%= user.iban %></p>
+    <p>Morada: <%= user.morada %></p>
+    <p>NIF: <%= user.nif %></p>
+    <p>Email: <%= user.email %></p>
+    <form action="/users/delete/<%= user._id %>" method="POST">
+        <button type="submit">DELETE</button>
+    </form>  
+</body>
+</html>

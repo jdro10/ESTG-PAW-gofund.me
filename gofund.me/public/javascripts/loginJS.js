@@ -7,6 +7,16 @@ function seePassword() {
 	}
 }
 
+function passwordMatch(){
+	var pwo = document.getElementById('password');
+	var pwc = document.getElementById('confPass');
+
+	if(pwo.value !== pwc.value){
+		alert('Passwords não coincidem!');
+		pwc.value = "";
+	}
+}
+
 function redirectToCampaignForMe(){
 	location.href = "/CampaignPageForMe";
 }
