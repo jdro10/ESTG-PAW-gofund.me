@@ -14,6 +14,8 @@ function passwordMatch(){
 	if(pwo.value !== pwc.value){
 		alert('Passwords não coincidem!');
 		pwc.value = "";
+	}else{
+		alert('Registo bem sucedido!');
 	}
 }
 
