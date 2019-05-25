@@ -39,16 +39,25 @@ function redirectToUserPage(){
 	location.href = "/userDetails";
 }
 
+function redirectToSearchPage(){
+	location.href = "/searchDonations";
+}
+
+function getSearchValue(){
+	var res = document.getElementById("search").value;
+	document.getElementById("text").innerHTML = "test";
+}
+
 function addTitle(){
 	var index = location.href;
 
-	if(index === "http://localhost:3000/CampaignPageForMe"){
+	if(index === "http://localhost:8080/CampaignPageForMe"){
 		document.getElementById("mainTitle").innerHTML = "Fundraise for me";
 	}
-	else if(index === "http://localhost:3000/CampaignPageForFriend"){
+	else if(index === "http://localhost:8080/CampaignPageForFriend"){
 		document.getElementById("mainTitle").innerHTML = "Fundraise for friend";
 	}
-	else if(index === "http://localhost:3000/CampaignPageForInst"){
+	else if(index === "http://localhost:8080/CampaignPageForInst"){
 		document.getElementById("mainTitle").innerHTML = "Fundraise for charity";
 	}
 }

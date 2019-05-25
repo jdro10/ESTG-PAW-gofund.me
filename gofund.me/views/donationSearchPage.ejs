@@ -5,10 +5,12 @@
 		<title>Search donations</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/donationSearchPageStyle.css">
 		<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+		<script type="text/javascript" src="javascripts/loginJS.js"></script>
 	</head>
 
-	<body class="topFooter">
-		<p class="title">Search results for: </p>
+	<body class="topFooter" onload="getSearchValue()">
+		<p class="title" id="res" value="test">Search results for: </p>
+		<p id="text" class="result">undefined</td>
 	</body>
 
 	</html>

@@ -14,6 +14,16 @@
 		<button type="button" id="signIn" class="sign">Sign in</button>
 		<button type="button" id="startFund" class="fund">Login to gofund.me</button>
 
+        <script>
+        var input = document.getElementById("search");
+        input.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    redirectToSearchPage();
+                }
+            });
+         </script>
+
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
