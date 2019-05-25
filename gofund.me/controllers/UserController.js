@@ -31,15 +31,21 @@ userController.create = function(req, res){
 
 userController.save = function(req, res){
     var user = new User(req.body);
-    user.save(function(err){
-        if(err){
-            console.log('Error: ', err);
+    User.findOne({username: user.username}, function(err, exists){
+        if(exists == null){
+            user.save(function(err){
+                if(err){
+                    console.log('Error: ', err);
+                }
+                else{
+                    console.log("Utilizador registado com sucesso!");
+                    res.redirect("/loginPage");
+                }
+            });
+        }else{
+            res.render("../views/erro");
         }
-        else{
-            console.log("Utilizador registado com sucesso!");
-            res.redirect("/loginPage");
-        }
-    });
+    });  
 };
 
 //nao esta pronta
