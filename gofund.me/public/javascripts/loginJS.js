@@ -35,6 +35,10 @@ function redirectToMenu(){
 	location.href = "/LoginPage";
 }
 
+function redirectToUserPage(){
+	location.href = "/userDetails";
+}
+
 function addTitle(){
 	var index = location.href;
 
