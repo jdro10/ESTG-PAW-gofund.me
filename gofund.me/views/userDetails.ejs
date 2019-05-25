@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Detalhes utilizador</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/userDetailsCSS.css">
+	<title>Detalhes utilizador</title>
+	<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+	<link rel="stylesheet" type="text/css" href="stylesheets/userDetailsCSS.css">
 </head>
 
-<body class="topFooter">
-	<p class="title">Detalhes utilizador</p>
-    <p>Username: <%= user.username %></p>
-    <!--<p>Password: <%= user.password %></p>-->
-    <!--<p>Morada: <%= user.morada %></p>-->   
-    <!--<p>NIF: <%= user.nif %></p>-->
-    <!--<p>Email: <%= user.email %></p>-->
-    <form action="/users/delete/<%= user._id %>" method="POST">
-        <!--<button type="submit">DELETE</button>-->
-    </form>  
+<body>
+	<div class="topFooter">
+		<p class="title">Detalhes utilizador</p>
+	</div>
+	<p class="userName">Username: <%= user.username %></p>
+	<p class="password">Password: <%= user.password %></p>
+	<p class="morada">Morada: <%= user.morada %></p>   
+	<p class="nif">NIF: <%= user.nif %></p>
+	<p class="email">Email: <%= user.email %></p>
+	<form action="/users/delete/<%= user._id %>" method="POST">
+		<button type="submit" class="delete">DELETE USER</button>
+		<button type="submit" class="logOut">Log out</button>
+		<button type="submit" class="edit">EDIT USER</button>
+	</form>  
+
+	<div class="bottomFooter">
+		<p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+	</div>
+	
 </body>
 
 </html>
