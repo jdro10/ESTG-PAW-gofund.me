@@ -7,7 +7,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/users')
+mongoose.connect('mongodb://localhost/users', {useNewUrlParser: true})
   .then(() => console.log('Connection successful'))
   .catch((err) => console.error(err));
 
