@@ -15,10 +15,10 @@
 		</div>
 
 		<div class="formDiv">
-			<form method="post" action="/loginPage.ejs">
-			<input type="text" id="value" class="valueInput" placeholder=" Introduce you target value here...">
-			<input type="text" id="iban" class="ibanInput" placeholder=" Target IBAN">
-			<textarea id="description" class="description" placeholder= " Add a description to your campaign here..."></textarea>
+			<form action="/campaign/save" method="post">
+			<input type="text" id="value" class="valueInput" placeholder=" Introduce you target value here..." name="valorAtingir">
+			<input type="text" id="iban" class="ibanInput" placeholder=" Target IBAN" name="iban">
+			<textarea id="description" class="description" placeholder= " Add a description to your campaign here..." name="descricao"></textarea>
 			<p class="p1">If you wish to add another responsible to this campaign, add their user id here (2 person limit)</p>
 			<input type="text" id="id1" class="id1" placeholder=" 1º responsible´s ID">
 			<input type="text" id="id1" class="id2" placeholder=" 2º responsible´s ID">
