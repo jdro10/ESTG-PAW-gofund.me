@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Campanha</title>
+    <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+    <!--<link rel="stylesheet" type="text/css" href="stylesheets/userDetailsCSS.css">-->
+</head>
+
+<body class="topFooter">
+	<h1 class="title">Campanha</h1>
+    <p>Descrição: <%= campanha.descricao %></p>
+    <p>Valor atingir: <%= campanha.valorAtingir %> €</p>
+    <p>IBAN: <%= campanha.iban %></p> 
+    <form action="/campaign/delete/<%= campanha._id %>" method="POST">
+        <button type="submit" class="delete">DELETE CAMPAIGN</button>
+    </form>
+</body>
+</html>

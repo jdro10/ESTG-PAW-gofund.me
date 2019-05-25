@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BASE DE DADOS CAMPANHAS</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>LISTA DE CAMPANHAS</h1>
+    <% if(campanhas.length > 0) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Descricao</th>
+          <th>Valor a atingir</th>
+          <th>IBAN</th>
+          <th>Responsaveis</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i < campanhas.length; i++) { %>
+          <tr>
+            <td><a href="/campaign/show/<%= campanhas[i]._id %>"><%= campanhas[i].descricao %></a></td>
+            <td><%= campanhas[i].valorAtingir %></td>
+            <td><%= campanhas[i].iban %></td>
+            <td><%= campanhas[i].responsaveis %></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% }else{ %>
+    <h1>Não existem campanhas</h1>
+    <% } %>
+  </body>
+</html>
