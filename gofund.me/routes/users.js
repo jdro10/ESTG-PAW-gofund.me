@@ -12,7 +12,7 @@ router.get('/show/:id', function(req, res){
 });
 
 router.post('/save', function(req, res){
-  user.save(req, res);
+  var x = user.save(req, res);
 });
 
 router.post('/delete/:id', function(req, res, next){
