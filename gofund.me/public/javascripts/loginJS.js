@@ -44,8 +44,8 @@ function redirectToSearchPage(){
 }
 
 function getSearchValue(){
-	var res = document.getElementById("search").value;
-	document.getElementById("text").innerHTML = "test";
+	var res = document.getElementById("search").value , url = "http://localhost:8080/searchDonations?name=" + encodeURIComponent(res);
+	document.location.href = url;
 }
 
 function addTitle(){
