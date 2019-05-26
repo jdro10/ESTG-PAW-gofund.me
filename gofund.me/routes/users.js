@@ -19,4 +19,8 @@ router.post('/delete/:id', function(req, res, next){
   user.delete(req, res);
 });
 
+router.post('/update/:id', function(req, res){
+  user.update(req, res);
+});
+
 module.exports = router;
