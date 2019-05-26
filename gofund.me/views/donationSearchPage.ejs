@@ -9,12 +9,12 @@
 
 		<script>
 		window.onload = function(){
-		var url = document.location.href , params = url.split('?')[1].split('&'), data = {} , tmp;
-		for(var i = 0 , l = params.length; i < l; i++){
-		tmp = params[i].split("=");
-		data[tmp[0]] = tmp[1];
-		}
-		document.getElementById("text").innerHTML = data.name;
+			var url = document.location.href , params = url.split('?')[1].split('&'), data = {} , tmp;
+			for(var i = 0 , l = params.length; i < l; i++){
+				tmp = params[i].split("=");
+				data[tmp[0]] = tmp[1];
+			}
+			document.getElementById("text").innerHTML = data.name;
 		}
 		</script>
 
@@ -23,6 +23,19 @@
 	<body class="topFooter">
 		<p class="title">Search results for: </p>
 		<p id="text" class="result">undefined</td>
+
+		<div class="listDiv">
+		<ul>	
+			<!--Teste da lista com valores. Isto aqui depois é para apagar-->
+			<li>campanha1</li>
+			<li>campanha2</li>
+		</ul>
+		</div>	
+
+		<div class="bottomFooter">
+    		<p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+    	</div>
+
 	</body>
 
 	</html>
