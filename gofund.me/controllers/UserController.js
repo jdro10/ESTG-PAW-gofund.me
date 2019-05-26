@@ -9,7 +9,7 @@ userController.list = function(req, res){
             console.log('Error: ', err);
         }
         else{
-            res.render("../views/usersDatabase", {users: users});
+            res.render("../views/users/usersDatabase", {users: users});
         }
     });
 };
@@ -20,7 +20,7 @@ userController.show = function(req, res){
             console.log('Error: ', err);
         }
         else{
-            res.render("../views/userDetails", {user: user});
+            res.render("../views/users/userDetails", {user: user});
         }
     });
 };
@@ -55,7 +55,7 @@ userController.edit = function(req, res){
             console.log('Error: ', err);
         }
         else{
-            res.render("../views/users/edit.ejs", {user: user});
+            res.render("../views/users/edit", {user: user});
         }
     });
 };
