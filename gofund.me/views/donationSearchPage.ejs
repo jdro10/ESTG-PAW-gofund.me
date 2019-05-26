@@ -14,15 +14,14 @@
 				tmp = params[i].split("=");
 				data[tmp[0]] = tmp[1];
 			}
-			document.getElementById("text").innerHTML = data.name;
+			document.getElementById("title").innerHTML = "Search results for: " + data.name;
 		}
 		</script>
 
 	</head>
 
 	<body class="topFooter">
-		<p class="title">Search results for: </p>
-		<p id="text" class="result">undefined</td>
+		<p id="title" class="title">Search results for: </p>
 
 		<div class="listDiv">
 		<ul>	

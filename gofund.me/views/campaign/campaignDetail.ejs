@@ -3,16 +3,26 @@
 <head>
     <title>Campanha</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
-    <!--<link rel="stylesheet" type="text/css" href="stylesheets/userDetailsCSS.css">-->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/campaignDetailsCSS.css">
+    <script type="text/javascript" src="javascripts/loginJS.js"></script>
 </head>
 
 <body class="topFooter">
-	<h1 class="title">Campanha</h1>
-    <p>Descrição: <%= campanha.descricao %></p>
-    <p>Valor atingir: <%= campanha.valorAtingir %> €</p>
-    <p>IBAN: <%= campanha.iban %></p> 
+	<h1 class="title">Informações de campanha</h1>
+    <p class="desc">Descrição: <%= campanha.descricao %></p>
+    <p class="val">Valor atingir: <%= campanha.valorAtingir %> €</p>
+    <p class="iban">IBAN: <%= campanha.iban %></p>
+
+    <!--Este botao ainda nao da-->
+    <button type="button" class="home" onclick="redirectToMenu()">Home</button>
+
     <form action="/campaign/delete/<%= campanha._id %>" method="POST">
         <button type="submit" class="delete">DELETE CAMPAIGN</button>
     </form>
+
+    <div class="bottomFooter">
+        <p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+    </div>
+
 </body>
 </html>
