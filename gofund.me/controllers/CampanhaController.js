@@ -8,7 +8,7 @@ campanhaController.list = function(req, res){
         if(err){
             console.log('Error: ', err);
         }else{
-            res.render("../views/campaignsDatabase", {campanhas: campanhas});
+            res.render("../views/campaign/campaignsDatabase", {campanhas: campanhas});
         }
     });
 };
@@ -19,7 +19,7 @@ campanhaController.show = function(req, res){
             console.log('Error:', err);
         }
         else{
-            res.render("../views/campaignDetail", {campanha: campanha});
+            res.render("../views/campaign/campaignDetail", {campanha: campanha});
         }
     });
 };
