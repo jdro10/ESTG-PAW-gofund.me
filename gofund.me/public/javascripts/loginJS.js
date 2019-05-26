@@ -32,7 +32,7 @@ function redirectToCampaignForInst(){
 }
 
 function redirectToMenu(){
-	location.href = "/LoginPage";
+	location.href = "/loginPage";
 }
 
 function redirectToUserPage(){
