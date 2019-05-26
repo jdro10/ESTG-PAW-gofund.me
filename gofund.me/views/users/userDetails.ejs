@@ -29,14 +29,16 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 				<p class="modal-title">Edit user information:</p>
-				<input type="text" class="modal-username" id="editUsername" placeholder=" Edit your username here...">
-				<input type="text" class="modal-pass" id="editPassword" placeholder=" Edit your password here...">
-				<input type="text" class="modal-confPass" id="confirmPass" placeholder=" Confirm password">
-				<input type="text" class="modal-morada" id="editMorada" placeholder=" Edit your adress here...">
-				<input type="text" class="modal-nif" id="editNIF" placeholder=" Edit your NIF here...">
-				<input type="text" class="modal-email" id="editNIF" placeholder=" Edit your email adress here...">
-				<button type="submit" id="editButton" class="modal-confirm">Confirm changes</button>
-
+				<form action="/users/update/<%= user._id %>" method="POST">
+					<input type="text" class="modal-username" id="editUsername" value="<%= user.username %>" name="username">
+					<input type="text" class="modal-pass" id="editPassword" value="<%= user.password %>" name="password">
+					<input type="text" class="modal-confPass" id="confirmPass" placeholder=" Confirm password">
+					<input type="text" class="modal-morada" id="editMorada" value="<%= user.morada %>" name="morada">
+					<input type="text" class="modal-nif" id="editNIF" value="<%= user.nif %>" name="nif">
+					<input type="text" class="modal-email" id="editNIF" value="<%= user.email %>" name="email">
+					<!-- falta IBAN -->
+					<button type="submit" id="editButton" class="modal-confirm">Confirm changes</button>
+				</form>
                 <script>
                     function closeRegistry2(){
                         var modal3 = document.getElementById('myModal');

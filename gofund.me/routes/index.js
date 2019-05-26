@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controllers/UserController.js');
 
-/* GET home page. */
 router.get('/loginPage', function(req, res, next) {
   res.render('loginPage', { title: 'Express' });
 }); 

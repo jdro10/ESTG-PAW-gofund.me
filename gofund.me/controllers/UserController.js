@@ -25,10 +25,6 @@ userController.show = function(req, res){
     });
 };
 
-userController.create = function(req, res){
-    res.render("../views/loginPage");
-};
-
 userController.save = function(req, res){
     var user = new User(req.body);
     User.findOne({username: user.username}, function(err, exists){
@@ -48,18 +44,6 @@ userController.save = function(req, res){
     });  
 };
 
-//nao esta pronta
-userController.edit = function(req, res){
-    User.findOne({_id: req.params._id}).exec(function(err, user){
-        if(err){
-            console.log('Error: ', err);
-        }
-        else{
-            res.render("../views/users/edit", {user: user});
-        }
-    });
-};
-
 userController.delete = function(req, res){
     User.remove({_id: req.params.id}, function(err){
         if(err){
@@ -70,6 +54,16 @@ userController.delete = function(req, res){
             res.redirect('../');
         }
     });
+};
+
+userController.update = function(req, res){
+    User.findByIdAndUpdate(req.params.id, { $set: { username: req.body.username, morada: req.body.morada, password: req.body.password, nif: req.body.nif, email: req.body.email}},
+        { new: true }, function (err, user){
+            if(err){
+                console.log('Error: ', err);
+            }
+            res.redirect('/users/show/' + user._id);
+        });
 };
 
 module.exports = userController;
