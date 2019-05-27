@@ -57,13 +57,13 @@ userController.delete = function(req, res){
 };
 
 userController.update = function(req, res){
-    User.findByIdAndUpdate(req.params.id, { $set: { username: req.body.username, morada: req.body.morada, password: req.body.password, nif: req.body.nif, email: req.body.email}},
+    User.findByIdAndUpdate(req.params.id, { $set: {morada: req.body.morada, password: req.body.password, nif: req.body.nif, email: req.body.email, iban: req.body.iban}},
         { new: true }, function (err, user){
             if(err){
                 console.log('Error: ', err);
             }
             res.redirect('/users/show/' + user._id);
-        });
+            });
 };
 
 module.exports = userController;
