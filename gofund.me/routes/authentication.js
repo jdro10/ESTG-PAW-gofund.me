@@ -4,8 +4,8 @@ var User = require('../models/User');
 
 module.exports = function(passport){
     router.post('/login', passport.authenticate('local', {
-        successRedirect:'./login',
-        failureRedirect:'./views/erro'       
+        successRedirect:'../loginPage',
+        failureRedirect:'../loginPage',     
     }), function(req, res) {
         res.send('teste');
     });
