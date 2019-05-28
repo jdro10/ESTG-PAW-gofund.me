@@ -11,7 +11,7 @@ var CampanhaSchema = new mongoose.Schema({
     responsaveis: String,
     type: String,
     title: String,
-    valorCurrente: Number,
+    valorCorrente: Number,
     creatorUsername: String,
 });
 
