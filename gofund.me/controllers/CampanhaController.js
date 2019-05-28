@@ -60,8 +60,14 @@ campanhaController.delete = function(req, res){
     });
 };
 
-//pesquisar campanha pelo IBAN
-
-
+campanhaController.update = function(req, res){
+    Campanha.findByIdAndUpdate(req.params.id, { $set: {valorCorrente: req.body.valorCorrente}},
+        { new: true }, function (err, campanha){
+            if(err){
+                console.log('Error: ', err);
+            }
+            res.redirect('/users/show/' + campanha._id);
+            });
+};
 
 module.exports = campanhaController;
