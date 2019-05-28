@@ -16,16 +16,17 @@
 
 		<div class="formDiv">
 			<form action="/campaign/save" method="post">
-				
 				<input type="text" id="value" class="valueInput" placeholder=" Introduce you target value here..." name="valorAtingir">
 				<input type="text" id="iban" class="ibanInput" placeholder=" Target IBAN" name="iban">
+				<input type="text" id="title" class="campTitle" placeholder=" Introduce a campaign title here..." name="title">
 				<textarea id="description" class="description" placeholder= " Add a description to your campaign here..." name="descricao"></textarea>
 				<p class="p1">If you wish to add another responsible to this campaign, add their user id here (2 person limit)</p>
 				<input type="text" id="id1" class="id1" placeholder=" 1º responsible´s ID">
 				<input type="text" id="id1" class="id2" placeholder=" 2º responsible´s ID">
 				<button type="submit" id="createCampaign" class="createButton">Create campaign</button>
 				<button type="button" id="backToMenu" class="back" onclick="redirectToMenu()">Back to menu</button>
-
+				<input type=hidden id="type" name="type"></input>
+				<input type=hidden id="user_id" name="type"></input>
 				<div class="photoDef"></div>
 				<button type="submit" id="upload" class="uploadButton">Upload a logo</button>
 			</form>
