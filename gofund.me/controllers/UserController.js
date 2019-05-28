@@ -1,7 +1,14 @@
+/*
+Campanha Controller 
+Liga o schema user da pasta models às views
+*/
+
 var mongoose = require('mongoose');
 var User = require('../models/User');
 
 var userController = {};
+
+//lista os users 
 
 userController.list = function(req, res){
     User.find({}).exec(function(err, users){
@@ -14,6 +21,8 @@ userController.list = function(req, res){
     });
 };
 
+//mostra detalhes de um user
+
 userController.show = function(req, res){
     User.findOne({_id: req.params.id}).exec(function(err, user){
         if(err){
@@ -24,6 +33,8 @@ userController.show = function(req, res){
         }
     });
 };
+
+//guarda novo user
 
 userController.save = function(req, res){
     var user = new User(req.body);
@@ -43,6 +54,8 @@ userController.save = function(req, res){
         }
     });  
 };
+
+//delete de um user
 
 userController.delete = function(req, res){
     User.remove({_id: req.params.id}, function(err){

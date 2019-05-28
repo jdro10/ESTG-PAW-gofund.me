@@ -1,17 +1,26 @@
+/*
+Campanha Controller 
+Liga o schema campanha da pasta models às views
+*/
+
 var mongoose = require('mongoose');
 var Campanha = require('../models/Campanha');
 
 var campanhaController = {};
+
+//listar campanhas 
 
 campanhaController.list = function(req, res){
     Campanha.find({}).exec(function(err, campanhas){
         if(err){
             console.log('Error: ', err);
         }else{
-            res.render("../views/campaign/campaignsDatabase", {campanhas: campanhas});
+            res.render("../views/campaign/campaignsDatabase", {campanhas: campanhas}); //apresentação dos dados
         }
     });
 };
+
+//mostra detalhes de uma campanha
 
 campanhaController.show = function(req, res){
     Campanha.findOne({_id: req.params.id}).exec(function(err, campanha){
@@ -32,10 +41,12 @@ campanhaController.save = function(req, res){
         }
         else{
             console.log('Campanha criada com sucesso!');
-            res.redirect("/campaign/show/" + campanha._id);
+            res.redirect("/campaign/show/" + campanha._id); //redirect para a campanha criada
         }
     });
 };
+
+//elimina campanha
 
 campanhaController.delete = function(req, res){
     Campanha.remove({_id: req.params.id}, function(err){
@@ -48,5 +59,9 @@ campanhaController.delete = function(req, res){
         }
     });
 };
+
+//pesquisar campanha pelo IBAN
+
+
 
 module.exports = campanhaController;
