@@ -2,6 +2,14 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controllers/UserController.js');
 
+var loggedAdmin = function(req, res, next){
+  if(req.isAuthenticated() && req.user.username === 'admin'){
+    next();
+  }else{
+    res.redirect('/loginPage');
+  }
+}
+
 var logged = function(req, res, next){
   if(req.isAuthenticated()){
     next();
@@ -11,11 +19,11 @@ var logged = function(req, res, next){
 }
 
 /* GET users listing. */
-router.get('/', logged, function(req, res, next) {
+router.get('/', loggedAdmin, function(req, res, next) {
   user.list(req, res);
 });
 
-router.get('/show/:id', function(req, res){
+router.get('/show/:id', logged, function(req, res){
   user.show(req, res);
 });
 

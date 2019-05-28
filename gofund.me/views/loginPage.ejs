@@ -74,11 +74,14 @@
     <button type="button" id="fundInst" onclick="redirectToCampaignForInst()" class="fundInstButton">For charity</button>
     <div id="fundInstitution" class="fundInstDiv"></div>
 
-    <button type="button" id="myFunds" onclick="redirectToUserPage()" class="myFundsButton">My profile</button>
-    <div id="myFunds" class="myFundsDiv"></div>
+    <button type="submit" id="myFunds" onclick="redirectToUserPage()" class="myFundsButton">My profile</button>
+	<div id="myFunds" class="myFundsDiv"></div>
 
     <div class="bottomFooter">
-    	<p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+		<p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+		<form action="auth/logout" method="get">
+			<button type="submit">Logout</button>
+		</form>
     </div>
 
     <div id="myModal2" class="modal2">

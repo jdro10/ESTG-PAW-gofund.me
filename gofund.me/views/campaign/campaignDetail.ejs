@@ -12,7 +12,7 @@
     <p class="titulo">Titulo: <%= campanha.title %></p>
     <p class="desc">Descrição: <%= campanha.descricao %></p>
     <p class="val">Valor atingir: <%= campanha.valorAtingir %> €</p>
-    <p class="valCurrent">Valor corrente: <%= campanha.valorCorrente %> €</p>
+    <p class="valCurrent">Valor currente: <%= campanha.valorCorrente %></p>
     <p class="iban">IBAN: <%= campanha.iban %></p>
     <p class="type">Tipo: <%= campanha.type %></p>
 
@@ -21,7 +21,7 @@
 
     <form action="/campaign/delete/<%= campanha._id %>" method="POST">
         <button type="submit" class="delete">DELETE CAMPAIGN</button>
-        <button type="button" class="donate" id="donate">Donate to campaign</button>
+        <button type="submit" class="donate">Donate to campaign</button>
     </form>
 
     <div class="bottomFooter">
@@ -31,10 +31,11 @@
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-                <p class="modal-title">Donate to campaign:</p>
-                <form action="/campaign/update/<%= campanha._id %>" method="POST">
-                    <input type="text" placeholder="Enter the amount you want to donate here" class="donateInput"></input>
-                    <button type="submit" id="donateButton" class="modal-confirm">Donate</button>
+                <p class="modal-title">Edit user information:</p>
+                <form action="/campaign/update/<%= campaign._id %>" method="POST">
+                    
+                    <!-- falta IBAN -->
+                    <button type="submit" id="editButton" class="modal-confirm">Confirm changes</button>
                 </form>
                 <script>
                     function closeRegistry2(){
@@ -49,7 +50,7 @@
         // Get the modal
         var modal = document.getElementById('myModal');
         // Get the button that opens the modal
-        var btn = document.getElementById("donate");
+        var btn = document.getElementById("editUser");
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
         // When the user clicks the button, open the modal      
