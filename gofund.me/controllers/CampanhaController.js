@@ -24,10 +24,6 @@ campanhaController.show = function(req, res){
     });
 };
 
-campanhaController.create = function(req, res){
-    res.render("../views/campaignPage");
-};
-
 campanhaController.save = function(req, res){
     var campanha = new Campanha(req.body);
     campanha.save(function(err){
