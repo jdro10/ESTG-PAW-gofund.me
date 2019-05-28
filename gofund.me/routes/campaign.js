@@ -18,4 +18,8 @@ router.post('/delete/:id', function(req, res, next){
   campanha.delete(req, res);
 });
 
+router.post('/update/:id', function(req, res){
+  campanha.update(req, res);
+});
+
 module.exports = router;
