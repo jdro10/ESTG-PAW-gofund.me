@@ -28,14 +28,14 @@
         <p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
     </div>
 
+    
     <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-                <p class="modal-title">Edit user information:</p>
-                <form action="/campaign/update/<%= campaign._id %>" method="POST">
-                    
-                    <!-- falta IBAN -->
-                    <button type="submit" id="editButton" class="modal-confirm">Confirm changes</button>
+                <p class="modal-title">Donate to campaign:</p>
+                <form action="/campaign/update/<%= campanha._id %>" method="POST">
+                    <input type="text" placeholder="Enter the amount you want to donate here" class="donateInput"></input>
+                    <button type="submit" id="donateButton" class="modal-confirm">Donate</button>
                 </form>
                 <script>
                     function closeRegistry2(){
@@ -50,7 +50,7 @@
         // Get the modal
         var modal = document.getElementById('myModal');
         // Get the button that opens the modal
-        var btn = document.getElementById("editUser");
+        var btn = document.getElementById("donate");
         // Get the <span> element that closes the modal
         var span = document.getElementsByClassName("close")[0];
         // When the user clicks the button, open the modal      
