@@ -8,7 +8,7 @@ var CampanhaSchema = new mongoose.Schema({
     type: String,
     title: String,
     valorCurrente: Number,
-    creatorId: Number,
+    creatorUsername: String,
 });
 
 module.exports = mongoose.model('Campanha', CampanhaSchema);

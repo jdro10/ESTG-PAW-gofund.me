@@ -58,12 +58,12 @@ function addTitle(){
 	}
 	else if(index === "http://localhost:8080/CampaignPageForFriend"){
 		document.getElementById("mainTitle").innerHTML = "Fundraise for friend";
-		var x = "For friend";
-		document.getElementById("type").value = x;
+		var y = "For friend";
+		document.getElementById("type").value = y;
 	}
 	else if(index === "http://localhost:8080/CampaignPageForInst"){
 		document.getElementById("mainTitle").innerHTML = "Fundraise for charity";
-		var x = "For charity";
-		document.getElementById("type").value = x;
+		var z = "For charity";
+		document.getElementById("type").value = z;
 	}
 }
