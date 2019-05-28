@@ -2,8 +2,16 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controllers/UserController.js');
 
+var logged = function(req, res, next){
+  if(req.isAuthenticated()){
+    next();
+  }else{
+    res.redirect('login');
+  }
+}
+
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', logged, function(req, res, next) {
   user.list(req, res);
 });
 
