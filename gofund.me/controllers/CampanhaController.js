@@ -28,6 +28,7 @@ campanhaController.show = function(req, res){
             console.log('Error:', err);
         }
         else{
+            campanha.creatorUsername = req.user.username;
             res.render("../views/campaign/campaignDetail", {campanha: campanha});
         }
     });
@@ -40,7 +41,7 @@ campanhaController.save = function(req, res){
             console.log('Err:', err);
         }
         else{
-            console.log('Campanha criada com sucesso!');
+            console.log('Campanha criada com sucesso!');            
             res.redirect("/campaign/show/" + campanha._id); //redirect para a campanha criada
         }
     });

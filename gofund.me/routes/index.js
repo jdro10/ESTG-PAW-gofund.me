@@ -2,6 +2,14 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controllers/UserController.js');
 
+var logged = function(req, res, next){
+  if(req.isAuthenticated()){
+    next();
+  }else{
+    res.redirect('/loginPage');
+  }
+}
+
 router.get('/loginPage', function(req, res, next) {
   res.render('loginPage', { title: 'Express' });
 }); 
@@ -22,7 +30,7 @@ router.get('/searchDonations', function(req, res, next) {
   res.render('donationSearchPage', { title: 'Express' });
 });
 
-router.get('/profile', function(req, res){
+router.get('/profile', logged, function(req, res){
   res.render('../views/users/userDetails', {user: req.user});
 });
 
