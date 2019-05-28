@@ -9,15 +9,19 @@
 
 <body class="topFooter">
 	<h1 class="title">Informações de campanha</h1>
+    <p class="titulo">Titulo: <%= campanha.title %></p>
     <p class="desc">Descrição: <%= campanha.descricao %></p>
     <p class="val">Valor atingir: <%= campanha.valorAtingir %> €</p>
+    <p class="valCurrent">Valor currente: <%= campanha.valorCurrente %></p>
     <p class="iban">IBAN: <%= campanha.iban %></p>
+    <p class="type">Tipo: <%= campanha.type %></p>
 
     <!--Este botao ainda nao da-->
     <button type="button" class="home" onclick="redirectToMenu()">Home</button>
 
     <form action="/campaign/delete/<%= campanha._id %>" method="POST">
         <button type="submit" class="delete">DELETE CAMPAIGN</button>
+        <button type="submit" class="donate">Donate to campaign</button>
     </form>
 
     <div class="bottomFooter">
