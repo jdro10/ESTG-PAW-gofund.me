@@ -2,11 +2,19 @@ var express = require('express');
 var router = express.Router();
 var campanha = require('../controllers/CampanhaController');
 
+var logged = function(req, res, next){
+  if(req.isAuthenticated()){
+    next();
+  }else{
+    res.redirect('/loginPage');
+  }
+}
+
 router.get('/', function(req, res, next) {
   campanha.list(req, res);
 });
 
-router.post('/save', function(req, res){
+router.post('/save', logged, function(req, res){
   campanha.save(req, res);
 });
 
