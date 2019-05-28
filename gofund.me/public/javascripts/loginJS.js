@@ -36,7 +36,7 @@ function redirectToMenu(){
 }
 
 function redirectToUserPage(){
-	location.href = "/userDetails";
+	location.href = "/profile";
 }
 
 function redirectToSearchPage(){

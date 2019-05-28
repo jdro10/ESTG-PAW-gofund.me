@@ -9,6 +9,13 @@ module.exports = function(passport){
     }), function(req, res) {
         res.send('teste');
     });
+
+    router.get('/logout', function(req, res){
+
+        req.session.destroy(function (err) {
+            res.redirect('/');
+        });
+    });
     
     return router;
 };

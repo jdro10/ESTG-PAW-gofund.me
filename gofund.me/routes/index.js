@@ -22,8 +22,8 @@ router.get('/searchDonations', function(req, res, next) {
   res.render('donationSearchPage', { title: 'Express' });
 });
 
-router.get('/userDetails', function(req, res, next) {	 
-   res.render("../views/userDetails", {user: user});
+router.get('/profile', function(req, res){
+  res.render('../views/users/userDetails', {user: req.user});
 });
 
 router.get('/searchDonations', function(req, res, next) {	 
