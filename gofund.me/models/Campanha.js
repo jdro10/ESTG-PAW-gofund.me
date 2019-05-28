@@ -9,6 +9,10 @@ var CampanhaSchema = new mongoose.Schema({
     valorAtingir: Number,
     iban: String,
     responsaveis: String,
+    type: String,
+    title: String,
+    valorCurrente: Number,
+    creatorUsername: String,
 });
 
 module.exports = mongoose.model('Campanha', CampanhaSchema);

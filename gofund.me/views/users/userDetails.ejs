@@ -15,6 +15,7 @@
 	<p class="morada">Morada: <%= user.morada %></p>   
 	<p class="nif">NIF: <%= user.nif %></p>
 	<p class="email">Email: <%= user.email %></p>
+	<p class="iban">IBAN: <%= user.iban %></p>
 	<form action="/users/delete/<%= user._id %>" method="POST">
 		<button type="submit" class="delete">DELETE USER</button>
 		<button type="submit" class="logOut">Log out</button>
@@ -30,7 +31,7 @@
 			<span class="close">&times;</span>
 				<p class="modal-title">Edit user information:</p>
 				<form action="/users/update/<%= user._id %>" method="POST">
-					<input type="text" class="modal-username" id="editUsername" value="<%= user.username %>" name="username">
+					<input type="text" class="modal-iban" id="editIban" value="<%= user.iban %>" name="iban">
 					<input type="text" class="modal-pass" id="editPassword" value="<%= user.password %>" name="password">
 					<input type="text" class="modal-confPass" id="confirmPass" placeholder=" Confirm password">
 					<input type="text" class="modal-morada" id="editMorada" value="<%= user.morada %>" name="morada">

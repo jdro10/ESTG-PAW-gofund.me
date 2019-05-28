@@ -33,14 +33,6 @@ campanhaController.show = function(req, res){
     });
 };
 
-//cria campanha
-
-campanhaController.create = function(req, res){
-    res.render("../views/campaignPage");
-};
-
-// guarda nova campanha
-
 campanhaController.save = function(req, res){
     var campanha = new Campanha(req.body);
     campanha.save(function(err){

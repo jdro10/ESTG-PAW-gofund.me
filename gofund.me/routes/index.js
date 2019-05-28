@@ -30,5 +30,4 @@ router.get('/searchDonations', function(req, res, next) {
    res.render("donationSearchPage", {user: user});
 });
 
-
 module.exports = router;
