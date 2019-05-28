@@ -66,7 +66,7 @@ campanhaController.update = function(req, res){
             if(err){
                 console.log('Error: ', err);
             }
-            res.redirect('/users/show/' + campanha._id);
+            res.redirect('/campaign/show/' + campanha._id);
             });
 };
 
