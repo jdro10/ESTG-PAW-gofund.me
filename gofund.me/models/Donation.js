@@ -2,16 +2,14 @@ var mongoose = require('mongoose'); //importar o módulo em express
 
 /*
 Modelo de dados
-Schema de Users que gera objectos a guardar nuam coleção.
+Schema de Donations que gera objectos a guardar nuam coleção.
 */
 
-var UserSchema = new mongoose.Schema({
+var DonationSchema = new mongoose.Schema({
     username: String,
-    password: String,
-    iban: String,
-    morada: String,
+    campanha: String,
+    montante: Number,
     nif: Number,
-    email: String,
 });
 
 module.exports = mongoose.model('User', UserSchema);
