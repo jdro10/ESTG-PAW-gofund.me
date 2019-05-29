@@ -18,9 +18,12 @@
 	<p class="iban">IBAN: <%= user.iban %></p>
 	<form action="/users/delete/<%= user._id %>" method="POST">
 		<button type="submit" class="delete">DELETE USER</button>
-		<button type="submit" class="logOut">Log out</button>
 		<button type="button" id="editUser" class="edit">EDIT USER</button>
 	</form>  
+
+		<form action="auth/logout" method="get">
+			<button type="submit" class="logOut">Logout</button>
+		</form>
 
 	<div class="bottomFooter">
 		<p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
