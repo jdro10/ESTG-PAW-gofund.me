@@ -10,7 +10,11 @@
 
 	<body class="topFooter">
 		<p class="title">gofund.me</p>
-		<input type="text" id="search" class="searchBar" placeholder="Search for donations...">
+
+		<form action="/campaign" method="GET">
+			<button type"button" id="searchDonations" class="searchButton">Show campaigns wall</button>
+		</form>
+
 		<button type="button" id="signIn" class="sign">Sign in</button>
 		<button type="button" id="startFund" class="fund">Login to gofund.me</button>
 
