@@ -13,7 +13,7 @@ module.exports = function(passport){
     router.get('/logout', function(req, res){
 
         req.session.destroy(function (err) {
-            res.redirect('/');
+            res.redirect('../loginpage');
         });
     });
     

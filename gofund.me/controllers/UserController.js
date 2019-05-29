@@ -46,13 +46,13 @@ userController.save = function(req, res){
 };
 
 userController.delete = function(req, res){  
-    User.remove({_id: req.params.id}, function(err, user){
+    User.remove({_id: req.params.id}, function(err){
         if(err){
             console.log('Error: ', err);
         }
         else{   
             console.log('Utilizador apagado!');
-            res.redirect('../');
+            res.redirect('./logout');
         }
     });
 };
