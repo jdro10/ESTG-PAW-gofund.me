@@ -32,6 +32,23 @@ campanhaController.listActive = function (req, res) {
     });
 };
 
+campanhaController.listDonators = function (req, res) {
+    Campanha.findOne({ _id: req.params.id }).exec(function (err, campanha) {
+        if (err) {
+            console.log('Error:', err);
+        }
+        else {
+            Donation.find({ campanha: campanha.title }).exec(function (err, existsDonator) {
+                if (existsDonator == null) {
+                    res.redirect('../');
+                } else {
+                    res.render("../views/campaign/campaignDonators", { existsDonator: existsDonator });
+                }
+            });
+        }
+    });
+};
+
 //mostra detalhes de uma campanha
 
 campanhaController.show = function (req, res) {

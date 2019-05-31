@@ -18,11 +18,15 @@ router.get('/active', function(req, res, next) {
   campanha.listActive(req, res);
 });
 
+router.get('/campaignDonators/:id', function(req, res, next) {
+  campanha.listDonators(req, res);
+});
+
 router.post('/save', logged, function(req, res){
   campanha.save(req, res);
 });
 
-router.get('/show/:id', function(req, res){
+router.get('/show/:id', logged, function(req, res){
   campanha.show(req, res);
 });
 
