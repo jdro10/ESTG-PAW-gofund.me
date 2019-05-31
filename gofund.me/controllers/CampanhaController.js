@@ -59,14 +59,19 @@ campanhaController.show = function(req, res){
 
 campanhaController.save = function(req, res){
     var campanha = new Campanha(req.body);
+    var user = req.user.username;
+    var userId = req.user._id;
+    campanha.creatorId = userId;
+    campanha.creatorUsername = user;
     Campanha.findOne({title: campanha.title}, function(err, exists){
         if(exists == null){
             campanha.save(function(err){
                 if(err){
                     console.log('Err:', err);
                 }
-                else{
-                    console.log('Campanha criada com sucesso!');           
+                else{ 
+                    
+                    console.log('Campanha criada com sucesso!');    
                     res.redirect("/campaign/show/" + campanha._id); //redirect para a campanha criada
                 }
             });
