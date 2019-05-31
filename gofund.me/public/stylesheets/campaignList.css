@@ -1,0 +1,64 @@
+.customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  position: fixed;
+  top: 18%;
+  left: 0%;
+  overflow-y: scroll; 
+}
+
+.customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.customers tr:nth-child(even){background-color: #f2f2f2;}
+
+.customers tr:hover {background-color: #ddd;}
+
+.customers th {
+  padding-top: 15px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topFooter{
+  position: relative;
+  width: 100%;
+  top: 2%;
+  left: 0%;
+  position: fixed;
+  height: 14%;  
+  box-shadow: 0px 1px 5px #888888;
+  background-color: rgba(255,255,255,0.6);
+}
+
+.title{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  width: 500px;
+  position: fixed;
+  top: 5.5%;
+  left: 42%;  
+}
+
+.back{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  font-weight: bold;
+  height: 4%;
+  position: fixed;
+  top: 7%;
+  left: 88%;
+  color: green;
+  border: solid;
+  border-width: thin;
+  border-color: green;
+  background-color: transparent;
+  border-radius: 3px;
+}

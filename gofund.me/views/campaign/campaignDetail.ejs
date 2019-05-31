@@ -16,8 +16,9 @@
     <p class="iban">IBAN: <%= campanha.iban %> | Responsavel: <%= campanha.responsavel1 %></p>
     <p class="type">Tipo: <%= campanha.type %> | Percentagem concluido: <%= (campanha.valorCorrente * 100) / campanha.valorAtingir %> %</p>
 
-    <!--Este botao ainda nao da-->
-    <button type="button" class="home" onclick="redirectToMenu()">Home</button>
+    <form action="/loginPage" method="get">
+        <button type="submit" class="home">Home</button>
+    </form>
 
     <% if(campanha.valorCorrente > 0) { %>
         <form action="/campaign/update/<%= campanha._id %>" method="POST">

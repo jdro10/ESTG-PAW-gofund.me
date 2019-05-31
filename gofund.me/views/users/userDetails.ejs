@@ -4,11 +4,12 @@
 	<title>User details</title>
 	<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/userDetailsCSS.css">
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 
 <body>
 	<div class="topFooter">
-		<p class="title">Detalhes de utilizador</p>
+		<p class="title">User details</p>
 	</div>
 	<p class="userName">Username: <%= user.username %></p>
 	<p class="password">Password: <%= user.password %></p>
@@ -21,8 +22,8 @@
 		<button type="button" id="editUser" class="edit">EDIT USER</button>
 	</form>  
 
-		<form action="auth/logout" method="get">
-			<button type="submit" class="logOut">Logout</button>
+		<form action="/loginPage" method="get">
+			<button type="submit" class="logOut">Back to Menu</button>
 		</form>
 
 	<div class="bottomFooter">
@@ -35,12 +36,11 @@
 				<p class="modal-title">Edit user information:</p>
 				<form action="/users/update/<%= user._id %>" method="POST">
 					<input type="text" class="modal-iban" id="editIban" value="<%= user.iban %>" name="iban">
-					<input type="text" class="modal-pass" id="editPassword" value="<%= user.password %>" name="password">
+					<input type="password" class="modal-pass" id="editPassword" value="<%= user.password %>" name="password">
 					<input type="text" class="modal-confPass" id="confirmPass" placeholder=" Confirm password">
 					<input type="text" class="modal-morada" id="editMorada" value="<%= user.morada %>" name="morada">
 					<input type="text" class="modal-nif" id="editNIF" value="<%= user.nif %>" name="nif">
 					<input type="text" class="modal-email" id="editNIF" value="<%= user.email %>" name="email">
-					<!-- falta IBAN -->
 					<button type="submit" id="editButton" class="modal-confirm">Confirm changes</button>
 				</form>
                 <script>
