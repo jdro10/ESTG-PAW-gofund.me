@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My donations</title>
+</head>
+<body>
+    <h1>My donations</h1>
+    <% if( exists.length > 0 ) { %>
+    <% for(var i = 0; i < exists.length; i++) { %>
+    <p>Campaign: <%= exists[i].campanha %> - <%= exists[i].montante %> €</p>
+    <% } %>
+    <% } else { %>
+    <p>You haven't made any donation</p>
+    <% } %>
+    <p>Total spent in donations: <%= totalGasto %> €</p>
+</body>
+</html>

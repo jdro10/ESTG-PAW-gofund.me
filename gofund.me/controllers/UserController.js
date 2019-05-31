@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
 var User = require('../models/User');
+var Campanha = require('../models/Campanha');
+var Donation = require('../models/Donation');
 
 var userController = {};
 
@@ -10,6 +12,20 @@ userController.list = function(req, res){
         }
         else{
             res.render("../views/users/usersDatabase", {users: users});
+        }
+    });
+};
+
+userController.listMyDonations = function(req, res){
+    Donation.find({username: req.user.username}).exec(function (err, exists) {
+        if(exists != null){
+            var totalGasto = 0;
+            for(var i = 0; i < exists.length; i++){
+                totalGasto += exists[i].montante;
+            }
+            res.render("../views/users/userDonations", { exists: exists, totalGasto: totalGasto });
+        }else{
+            res.redirect('../loginpage');
         }
     });
 };

@@ -23,6 +23,10 @@ router.get('/', loggedAdmin, function(req, res, next) {
   user.list(req, res);
 });
 
+router.get('/myDonations', function(req, res, next) {
+  user.listMyDonations(req, res);
+});
+
 router.get('/show/:id', logged, function(req, res){
   user.show(req, res);
 });
