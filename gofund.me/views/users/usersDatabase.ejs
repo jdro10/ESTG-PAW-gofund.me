@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BASE DE DADOS UTILIZADORES</title>
+    <title>Users database</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1>LISTA UTILIZADORES REGISTADOS</h1>
+    <h1>LIST OF REGISTERED USERS</h1>
     <% if(users.length > 0) { %>
     <table border="1" sytle="border-collapse: collapse;">
       <thead>
         <tr>
           <th>Username</th>
           <th>Password</th>
-          <th>Morada</th>
+          <th>Address</th>
           <th>Email</th>
           <th>NIF</th>
           <th>IBAN</th>
@@ -32,7 +32,7 @@
       </tbody>
     </table>
     <% }else{ %>
-    <h1>Não existem utilizadores registados</h1>
+    <h1>Currently there are no registed users</h1>
     <% } %>
   </body>
 </html>
