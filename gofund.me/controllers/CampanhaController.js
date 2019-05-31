@@ -5,6 +5,7 @@ Liga o schema campanha da pasta models às views
 
 var mongoose = require('mongoose');
 var Campanha = require('../models/Campanha');
+var Donation = require('../models/Donation');
 
 var campanhaController = {};
 
@@ -28,8 +29,20 @@ campanhaController.show = function(req, res){
             console.log('Error:', err);
         }
         else{
-            campanha.creatorUsername = req.user.username;
-            res.render("../views/campaign/campaignDetail", {campanha: campanha});
+            Donation.find({campanha: campanha.title}).exec(function(err, exists){
+                if(exists == null){
+                    campanha.valorCorrente = 0;
+                    res.render("../views/campaign/campaignDetail", {campanha: campanha});
+                }else{
+                    console.log('length: ' + exists.length);
+                    var montante = 0; 
+                    for(var i = 0; i < exists.length; i++){
+                        montante += exists[i].montante;
+                    }
+                    campanha.valorCorrente = montante;
+                    res.render("../views/campaign/campaignDetail", {campanha: campanha});    
+                }
+            });            
         }
     });
 };

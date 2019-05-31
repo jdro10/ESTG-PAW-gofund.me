@@ -4,7 +4,8 @@ Liga o schema donation da pasta models às views
 */
 
 var mongoose = require('mongoose');
-var Campanha = require('../models/Donation');
+var Donation = require('../models/Donation');
+var Campanha = require('../models/Campanha');
 
 var donationController = {};
 
@@ -15,7 +16,7 @@ donationController.list = function(req, res){
         if(err){
             console.log('Error: ', err);
         }else{
-            res.render("../views/", {donations: donations}); //apresentação dos dados || falta criar views de donations
+            res.render("../views/donation/donationsDatabase", {donations: donations}); //apresentação dos dados || falta criar views de donations
         }
     });
 };
@@ -28,42 +29,31 @@ donationController.show = function(req, res){
             console.log('Error:', err);
         }
         else{
-            res.render("../views/", {donation: donation});
+            res.render("../views/donation/donationDetails", {donation: donation});
         }
     });
-};
-
-//cria donation
-
-donationController.create = function(req, res){
-    res.render("../views/donationPage"); //criar donation page
 };
 
 // guarda nova donation
 
 donationController.save = function(req, res){
     var donation = new Donation(req.body);
-    donation.save(function(err){
-        if(err){
-            console.log('Err:', err);
-        }
-        else{
-            console.log('Donation criada com sucesso!');
-            res.redirect("/" + donation._id); //view para donation
-        }
-    });
-};
-
-//elimina donation
-
-donationController.delete = function(req, res){
-    Donation.remove({_id: req.params.id}, function(err){
-        if(err){
-            console.log('Error:', err);
-        }
-        else{
-            console.log('Donation delete!');
-            res.redirect('../'); //definir mais views
+    Campanha.findOne({title: donation.campanha}, function(err, exists){
+        if(exists != null){
+            donation.save(function(err){
+                if(err){
+                    console.log('Err:', err);
+                }
+                else if(donation.montante > 0){
+                    donation.id = exists.id;
+                    console.log('Donation criada com sucesso!');
+                    res.redirect("/donation/show/" + donation._id); //view para donation
+                }else{
+                    res.render('../views/erro');
+                }
+            });
+        }else{
+            res.render('../views/erro');
         }
     });
 };

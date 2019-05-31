@@ -9,7 +9,7 @@ var DonationSchema = new mongoose.Schema({
     username: String,
     campanha: String,
     montante: Number,
-    nif: Number,
+    id: String
 });
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Donation', DonationSchema);
