@@ -14,6 +14,10 @@ router.get('/', function(req, res, next) {
   campanha.list(req, res);
 });
 
+router.get('/active', function(req, res, next) {
+  campanha.listActive(req, res);
+});
+
 router.post('/save', logged, function(req, res){
   campanha.save(req, res);
 });
