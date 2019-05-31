@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BASE DE DADOS DONATIONS</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>LISTA DE DONATIONS</h1>
+    <% if(donations.length > 0) { %>
+    <table border="1" sytle="border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Campanha</th>
+          <th>Montante</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i < donations.length; i++) { %>
+          <tr>
+            <td><a href="/donation/show/<%= donations[i]._id %>"><%= donations[i].username %></a></td>
+            <td><%= donations[i].campanha %></td>
+            <td><%= donations[i].montante %>€</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% }else{ %>
+    <h1>Não existem donativos</h1>
+    <% } %>
+  </body>
+</html>
