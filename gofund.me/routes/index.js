@@ -38,4 +38,8 @@ router.get('/searchDonations', function(req, res, next) {
    res.render("donationSearchPage", {user: user});
 });
 
+router.get('/makeDonation', function(req, res, next) {	 
+  res.render("makeDonation");
+});
+
 module.exports = router;

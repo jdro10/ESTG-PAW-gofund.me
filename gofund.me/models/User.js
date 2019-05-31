@@ -12,6 +12,7 @@ var UserSchema = new mongoose.Schema({
     morada: String,
     nif: Number,
     email: String,
+    fullName: String,
 });
 
 module.exports = mongoose.model('User', UserSchema);

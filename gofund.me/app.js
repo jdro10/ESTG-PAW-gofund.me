@@ -20,6 +20,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var campaignRouter = require('./routes/campaign');
 var authenticationRouter = require('./routes/authentication')(passport);
+var donationRouter = require('./routes/donation');
 
 var app = express();
 
@@ -46,6 +47,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/campaign', campaignRouter);
 app.use('/auth', authenticationRouter);
+app.use('/donation', donationRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
