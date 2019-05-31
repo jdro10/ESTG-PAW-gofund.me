@@ -14,6 +14,7 @@ var CampanhaSchema = new mongoose.Schema({
     title: String,
     valorCorrente: Number,
     creatorUsername: String,
+    creatorId: String,
     estado: String,
 });
 
