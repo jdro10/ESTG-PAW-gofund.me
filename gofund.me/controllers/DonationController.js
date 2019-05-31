@@ -44,8 +44,7 @@ donationController.save = function(req, res){
                 if(err){
                     console.log('Err:', err);
                 }
-                else if(donation.montante > 0){
-                    console.log(exists.id);
+                else if(donation.montante > 0 && exists.estado != 'Desativado'){  
                     console.log('Donation criada com sucesso!');
                     res.redirect("/donation/show/" + donation._id); //view para donation
                 }else{

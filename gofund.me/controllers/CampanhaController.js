@@ -49,13 +49,19 @@ campanhaController.show = function(req, res){
 
 campanhaController.save = function(req, res){
     var campanha = new Campanha(req.body);
-    campanha.save(function(err){
-        if(err){
-            console.log('Err:', err);
-        }
-        else{
-            console.log('Campanha criada com sucesso!');            
-            res.redirect("/campaign/show/" + campanha._id); //redirect para a campanha criada
+    Campanha.findOne({title: campanha.title}, function(err, exists){
+        if(exists == null){
+            campanha.save(function(err){
+                if(err){
+                    console.log('Err:', err);
+                }
+                else{
+                    console.log('Campanha criada com sucesso!');            
+                    res.redirect("/campaign/show/" + campanha._id); //redirect para a campanha criada
+                }
+            });
+        }else{
+            res.render('../views/erro');
         }
     });
 };
@@ -75,7 +81,7 @@ campanhaController.delete = function(req, res){
 };
 
 campanhaController.update = function(req, res){
-    Campanha.findByIdAndUpdate(req.params.id, { $set: {valorCorrente: req.body.valorCorrente}},
+    Campanha.findByIdAndUpdate(req.params.id, { $set: {estado: 'Desativado'}},
         { new: true }, function (err, campanha){
             if(err){
                 console.log('Error: ', err);

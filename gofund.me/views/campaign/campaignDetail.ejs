@@ -9,18 +9,20 @@
 
 <body class="topFooter">
 	<h1 class="title">Informações de campanha</h1>
-    <p class="titulo">Titulo: <%= campanha.title %></p>
+    <p class="titulo">Titulo: <%= campanha.title %> | Estado campanha: <%= campanha.estado %></p>
     <p class="desc">Descrição: <%= campanha.descricao %></p>
     <p class="val">Valor atingir: <%= campanha.valorAtingir %> €</p>
-    <p class="valCurrent" id="valCurrent">Valor corrente: <%= campanha.valorCorrente %></p>
-    <p class="iban">IBAN: <%= campanha.iban %></p>
-    <p class="type">Tipo: <%= campanha.type %> Estado campanha: <%= campanha.estado %></p>
+    <p class="valCurrent" id="valCurrent">Valor corrente: <%= campanha.valorCorrente %> €</p>
+    <p class="iban">IBAN: <%= campanha.iban %> | Responsavel: <%= campanha.responsavel1 %></p>
+    <p class="type">Tipo: <%= campanha.type %> | Percentagem concluido: <%= (campanha.valorCorrente * 100) / campanha.valorAtingir %> %</p>
 
     <!--Este botao ainda nao da-->
     <button type="button" class="home" onclick="redirectToMenu()">Home</button>
 
     <% if(campanha.valorCorrente > 0) { %>
-    <h1>nao pode ser eliminado</h1>
+        <form action="/campaign/update/<%= campanha._id %>" method="POST">
+            <button type="submit" id="desativar" class="delete">DESAT CAMPAIGN</button>
+        </form>
     <% } else { %>
     <form action="/campaign/delete/<%= campanha._id %>" method="POST">
         <button type="submit" id="deleteBT" class="delete">DELETE CAMPAIGN</button>
