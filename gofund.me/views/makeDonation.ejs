@@ -1,13 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Make donation</title>
+	<title>Make donation</title>
+	<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="stylesheets/donationPage.css">
 </head>
+
 <body>
-    <form action="/donation/save" method="POST">
-    <input type="number" placeholder="valor aqui" name="montante">
-    <input type="text" placeholder="Titulo da campanha aqui" name="campanha">
-    <button type="submit">Donate</button>
-    </form>
+	<div class="topFooter">
+		<p class="title">Make your donation</p>
+	</div>
+
+	<form action="/donation/save" method="OST">
+		<p class="firststep">First step =></p>
+		<p class="secondstep"><= Second step</p>
+		<p class="final">And now you can donate</p>
+		<input type="number" placeholder=" Enter value here..." name="montante" class="value">
+		<input type="text" placeholder=" Campaign title here..." name="campanha" class="name">
+		<button type="submit" class="donate">Donate</button>
+	</form>
+
+	<form action="/loginPage" method="GET">
+		<button type="submit" class="back">Back to menu</button>
+	</form>
+
+	<div class="bottomFooter">
+		<p class="bottomParagraphLogin">2018-2019 gofund.me Trademark</p>
+	</div>
 </body>
 </html>

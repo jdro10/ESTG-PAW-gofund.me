@@ -6,18 +6,19 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/loginCSS.css">
 		<script type="text/javascript" src="javascripts/loginJS.js"></script>
 		<link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+		<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 	</head>
 
 	<body class="topFooter">
 		<p class="title">gofund.me</p>
 
 		<form action="/campaign" method="GET">
-			<button type="submit" id="searchDonations" class="searchButton">Show campaigns wall</button>
+			<button type="submit" id="searchDonations" class="searchButton">WALL OF CAMPAIGNS</button>
 		</form>
-		<button type="button" onclick="location.href='/makeDonation';">Make donation</button>
+		<button type="button" class="makeDonation" onclick="location.href='/makeDonation';">Make donation</button>
 
 		<form action="/campaign/active" method="GET">
-			<button type="submit">Show active campaigns</button>
+			<button type="submit" class="activeButton">Active campaigns</button>
 		</form>
 
 		<button type="button" id="signIn" class="sign">Sign in</button>
@@ -37,7 +38,7 @@
 		<div id="myModal" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>
-				<p class="tituloLogin">Login de utilizador:</p>
+				<p class="tituloLogin">User login:</p>
 				<form action="/auth/login" method="POST">
 					<input class="usernameInput" type="text" id="usernameInput" placeholder=" Username" name="username">
 					<input class="passwordInput" type="password" id="passwordInput" placeholder=" Password" name="password">
@@ -145,6 +146,9 @@
         }
     </script>
 
+
+    <p class="makeChange">MAKE A CHANGE AND DONATE TODAY =></p>
+    <p class="activeCampaigns"><= Check out our active campaigns</p>
 </body>
 
 </html>
