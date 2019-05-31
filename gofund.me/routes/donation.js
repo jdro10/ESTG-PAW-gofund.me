@@ -2,7 +2,15 @@ var express = require('express');
 var router = express.Router();
 var donation = require('../controllers/DonationController');
 
-router.get('/', function(req, res, next) {
+var loggedAdmin = function(req, res, next){
+  if(req.isAuthenticated() && req.user.username === 'admin'){
+    next();
+  }else{
+    res.redirect('/loginPage');
+  }
+}
+
+router.get('/', loggedAdmin, function(req, res, next) {
   donation.list(req, res);
 });
 

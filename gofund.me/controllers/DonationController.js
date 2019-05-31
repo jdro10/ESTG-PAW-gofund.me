@@ -38,6 +38,8 @@ donationController.show = function(req, res){
 
 donationController.save = function(req, res){
     var donation = new Donation(req.body);
+    var user = req.user.username;
+    donation.username = user;
     Campanha.findOne({title: donation.campanha}, function(err, exists){
         if(exists != null){
             donation.save(function(err){
