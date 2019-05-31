@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LISTA DE CAMPANHAS</h1>
+    <% if(campanhas.length > 0) { %>
+    <table border="1" sytle="border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>Descricao</th>
+          <th>Valor a atingir</th>
+          <th>IBAN</th>
+          <th>Responsaveis</th>
+          <th>Titulo</th>
+          <th>Tipo</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i = 0; i < campanhas.length; i++) { %>
+            <% if(campanhas[i].estado === 'Ativo'){ %>
+          <tr>
+            <td><a href="/campaign/show/<%= campanhas[i]._id %>"><%= campanhas[i].descricao %></a></td>
+            <td><%= campanhas[i].valorAtingir %></td>
+            <td><%= campanhas[i].iban %></td>
+            <td><%= campanhas[i].responsaveis %></td>
+            <td><%= campanhas[i].title %></td>
+            <td><%= campanhas[i].type %></td>
+            <td><%= campanhas[i].estado %></td>
+          </tr>
+          <% } %>
+        <% } %>
+      </tbody>
+    </table>
+    <% }else{ %>
+    <h1>Não existem campanhas ativas</h1>
+    <% } %>    
+</body>
+</html>

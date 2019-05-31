@@ -21,6 +21,16 @@ campanhaController.list = function(req, res){
     });
 };
 
+campanhaController.listActive = function(req, res){
+    Campanha.find({}).exec(function(err, campanhas){
+        if(err){
+            console.log('Error: ', err);
+        }else{
+            res.render("../views/campaign/activeCampaign", {campanhas: campanhas}); //apresentação dos dados
+        }
+    });
+};
+
 //mostra detalhes de uma campanha
 
 campanhaController.show = function(req, res){

@@ -21,7 +21,7 @@
 
     <% if(campanha.valorCorrente > 0) { %>
         <form action="/campaign/update/<%= campanha._id %>" method="POST">
-            <button type="submit" id="desativar" class="delete">DESAT CAMPAIGN</button>
+            <button type="submit" id="desativar" class="delete">Desativar CAMPAIGN</button>
         </form>
     <% } else { %>
     <form action="/campaign/delete/<%= campanha._id %>" method="POST">

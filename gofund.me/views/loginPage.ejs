@@ -12,9 +12,13 @@
 		<p class="title">gofund.me</p>
 
 		<form action="/campaign" method="GET">
-			<button type"button" id="searchDonations" class="searchButton">Show campaigns wall</button>
+			<button type="submit" id="searchDonations" class="searchButton">Show campaigns wall</button>
 		</form>
 		<button type="button" onclick="location.href='/makeDonation';">Make donation</button>
+
+		<form action="/campaign/active" method="GET">
+			<button type="submit">Show active campaigns</button>
+		</form>
 
 		<button type="button" id="signIn" class="sign">Sign in</button>
 		<button type="button" id="startFund" class="fund">Login to gofund.me</button>
