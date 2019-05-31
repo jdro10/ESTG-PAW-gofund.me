@@ -66,7 +66,7 @@ campanhaController.save = function(req, res){
                     console.log('Err:', err);
                 }
                 else{
-                    console.log('Campanha criada com sucesso!');            
+                    console.log('Campanha criada com sucesso!');           
                     res.redirect("/campaign/show/" + campanha._id); //redirect para a campanha criada
                 }
             });
