@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Campaign donators</title>
+</head>
+<body>
+    <h1>Campaign donators</h1>
+    <% if( existsDonator.length > 0 ) { %>
+    <% for(var i = 0; i < existsDonator.length; i++) { %>
+    <p>Donator username: <%= existsDonator[i].username %></p>
+    <% } %>
+    <% } else { %>
+    <p>There are no donators yet</p>
+    <% } %>
+</body>
+</html>
