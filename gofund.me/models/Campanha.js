@@ -13,6 +13,7 @@ var CampanhaSchema = new mongoose.Schema({
     title: String,
     valorCorrente: Number,
     creatorUsername: String,
+    estado: String,
 });
 
 module.exports = mongoose.model('Campanha', CampanhaSchema);
