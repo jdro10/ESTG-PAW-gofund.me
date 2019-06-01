@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controllers/UserController.js');
 
-var logged = function(req, res, next){
+var authenticated = function(req, res, next){
   if(req.isAuthenticated()){
     next();
   }else{
@@ -11,34 +11,27 @@ var logged = function(req, res, next){
 }
 
 router.get('/loginPage', function(req, res, next) {
-  res.render('loginPage', { title: 'Express' });
+  res.render('loginPage');
 }); 
 
 router.get('/CampaignPageForMe', function(req, res, next) {	 
-  res.render('campaignPage', { title: 'Express' });
+  res.render('campaignPage');
 });  
 
 router.get('/CampaignPageForFriend', function(req, res, next) {	 
-  res.render('campaignPage', { title: 'Express' });
+  res.render('campaignPage');
 });
 
 router.get('/CampaignPageForInst', function(req, res, next) {	 
-  res.render('campaignPage', { title: 'Express' });
+  res.render('campaignPage');
 });
 
-router.get('/searchDonations', function(req, res, next) {	 
-  res.render('donationSearchPage', { title: 'Express' });
-});
-
-router.get('/profile', logged, function(req, res){
+router.get('/profile', authenticated, function(req, res){
   res.render('../views/users/userDetails', {user: req.user});
 });
 
-router.get('/searchDonations', function(req, res, next) {	 
-   res.render("donationSearchPage", {user: user});
-});
 
-router.get('/makeDonation', function(req, res, next) {	 
+router.get('/makeDonation', authenticated, function(req, res, next) {	 
   res.render("makeDonation");
 });
 

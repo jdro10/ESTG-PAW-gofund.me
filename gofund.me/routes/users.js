@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var user = require('../controllers/UserController.js');
 
-var loggedAdmin = function(req, res, next){
+var authenticatedAdmin = function(req, res, next){
   if(req.isAuthenticated() && req.user.username === 'admin'){
     next();
   }else{
@@ -10,7 +10,7 @@ var loggedAdmin = function(req, res, next){
   }
 }
 
-var logged = function(req, res, next){
+var authenticated = function(req, res, next){
   if(req.isAuthenticated()){
     next();
   }else{
@@ -18,28 +18,27 @@ var logged = function(req, res, next){
   }
 }
 
-/* GET users listing. */
-router.get('/', loggedAdmin, function(req, res, next) {
+router.get('/', authenticatedAdmin, function(req, res, next) {
   user.list(req, res);
 });
 
-router.get('/myDonations', function(req, res, next) {
+router.get('/myDonations', authenticated, function(req, res, next) {
   user.listMyDonations(req, res);
 });
 
-router.get('/show/:id', logged, function(req, res){
+router.get('/show/:id', authenticated, function(req, res){
   user.show(req, res);
 });
 
-router.post('/save', function(req, res){
+router.post('/save', authenticated, function(req, res){
   user.save(req, res);
 });
 
-router.post('/delete/:id', function(req, res, next){
+router.post('/delete/:id', authenticated, function(req, res, next){
   user.delete(req, res);
 });
 
-router.post('/update/:id', function(req, res){
+router.post('/update/:id', authenticated, function(req, res){
   user.update(req, res);
 });
 

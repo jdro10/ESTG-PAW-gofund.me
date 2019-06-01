@@ -36,8 +36,8 @@
     <% for(var i = 0; i < campanhas.length; i++) { %>
     <% if(campanhas[i].estado === 'Ativo'){ %>
     <tr>
-      <td><%= campanhas[i].title %></td>
-      <td><a href="/campaign/show/<%= campanhas[i]._id %>"><%= campanhas[i].descricao %></a></td>
+      <td><a href="/campaign/show/<%= campanhas[i]._id %>"><%= campanhas[i].title %></a></td>
+      <td><%= campanhas[i].descricao %></td>
       <td><%= campanhas[i].valorAtingir %> €</td>
       <td><%= campanhas[i].iban %></td>
       <td><%= campanhas[i].responsible1 %></td>
