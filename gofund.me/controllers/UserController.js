@@ -68,7 +68,7 @@ userController.delete = function(req, res){
         }
         else{   
             console.log('Utilizador apagado!');
-            res.redirect('./logout');
+            res.redirect('/auth/logout');
         }
     });
 };
