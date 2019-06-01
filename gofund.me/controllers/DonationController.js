@@ -39,9 +39,11 @@ donationController.show = function(req, res){
 donationController.save = function(req, res){
     var donation = new Donation(req.body);
     var user = req.user.username;
+    var userId = req.user._id;
     donation.username = user;
+    donation.userId = userId;
     Campanha.findOne({title: donation.campanha}, function(err, exists){
-        if(exists != null && req.user.username != exists.creatorUsername){
+        if(exists != null && req.user._id != exists.creatorId){
             donation.save(function(err){
                 if(err){
                     console.log('Err:', err);

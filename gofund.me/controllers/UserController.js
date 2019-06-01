@@ -17,7 +17,7 @@ userController.list = function(req, res){
 };
 
 userController.listMyDonations = function(req, res){
-    Donation.find({username: req.user.username}).exec(function (err, exists) {
+    Donation.find({userId: req.user._id}).exec(function (err, exists) {
         if(exists != null){
             var totalGasto = 0;
             for(var i = 0; i < exists.length; i++){

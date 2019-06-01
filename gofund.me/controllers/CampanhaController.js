@@ -102,7 +102,7 @@ campanhaController.save = function (req, res) {
 
 campanhaController.delete = function (req, res) {
     Campanha.findOne({ _id: req.params.id }, function (err, exists) {
-        if (exists.creatorUsername === req.user.username) {
+        if (exists.creatorId === req.user._id) {
             Campanha.remove({ _id: req.params.id }, function (err) {
                 if (err) {
                     console.log('Error:', err);
@@ -121,7 +121,7 @@ campanhaController.delete = function (req, res) {
 
 campanhaController.update = function (req, res) {
     Campanha.findOne({ _id: req.params.id }, function (err, exists) {
-        if (exists.creatorUsername === req.user.username) {
+        if (exists.creatorId === req.user._id) {
             Campanha.findByIdAndUpdate(req.params.id, { $set: { estado: 'Desativado' } },
                 { new: true }, function (err, campanha) {
                     if (err) {
