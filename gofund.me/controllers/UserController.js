@@ -52,7 +52,7 @@ userController.save = function(req, res){
                 }
                 else{
                     console.log("Utilizador registado com sucesso!");
-                    res.redirect("/loginPage");
+                    res.render("../views/success");
                 }
             });
         }else{
