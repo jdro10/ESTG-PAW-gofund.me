@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var campanha = require('../controllers/CampanhaController');
 
-var logged = function(req, res, next){
+var authenticated = function(req, res, next){
   if(req.isAuthenticated()){
     next();
   }else{
@@ -22,19 +22,19 @@ router.get('/campaignDonators/:id', function(req, res, next) {
   campanha.listDonators(req, res);
 });
 
-router.post('/save', logged, function(req, res){
+router.post('/save', authenticated, function(req, res){
   campanha.save(req, res);
 });
 
-router.get('/show/:id', logged, function(req, res){
+router.get('/show/:id', authenticated, function(req, res){
   campanha.show(req, res);
 });
 
-router.post('/delete/:id', function(req, res, next){
+router.post('/delete/:id', authenticated, function(req, res, next){
   campanha.delete(req, res);
 });
 
-router.post('/update/:id', function(req, res){
+router.post('/update/:id', authenticated, function(req, res){
   campanha.update(req, res);
 });
 
