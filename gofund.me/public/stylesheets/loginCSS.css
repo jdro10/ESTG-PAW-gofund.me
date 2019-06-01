@@ -14,7 +14,7 @@
 	color: green;
 	width: 150px;
 	position: fixed;
-	top: 4%;
+	margin-top: 3%;
 	left: 47%;
 }
 
@@ -32,7 +32,7 @@
 	font-family: 'Luckiest Guy', cursive;
 	font-size: 15px;
 	position: fixed;
-	top: 8%;
+	margin-top: 3.5%;
 	left: 87%;
 	color: green;
 	border: solid;
@@ -46,7 +46,7 @@
 	font-family: 'Luckiest Guy', cursive;
 	font-size: 15px;
 	position: fixed;
-	top: 8%;
+	margin-top: 3.5%;
 	left: 80%;
 	color: black;
 	background-color: transparent;
@@ -63,7 +63,7 @@
 	border: solid;
 	border-width: thin;
 	border-radius: 3px;
-	margin-top: 51px;
+	margin-top: 3%;
 	margin-left: 70px;
 	font-size: 18px;
 	width: 15%;
@@ -601,8 +601,8 @@ neste caso é o de login*/
 	background-color: #1a72e7;
 	color: white;
 	font-size: 14px;
-	position: fixed;
-	margin-top: 30%;
+	position: absolute;
+	margin-top: 28%;
 	margin-left: 37%;
 }
 
@@ -616,7 +616,7 @@ neste caso é o de login*/
 	color: white;
 	font-size: 14px;
 	position: fixed;
-	margin-top: 30%;
+	margin-top: 28%;
 	margin-left: 1%;
 }
 
@@ -652,7 +652,7 @@ neste caso é o de login*/
 	width: 10%;
 	position: fixed;
 	bottom: 15%;
-	left: 38%;
+	left: 41%;
 	color: purple;
 	border: solid;
 	border-width: thin;
@@ -677,7 +677,7 @@ neste caso é o de login*/
 	width: 10%;
 	position: fixed;
 	top: 20%;
-	left: 53%;
+	left: 49%;
 	color: orange;
 	border: solid;
 	border-width: thin;
