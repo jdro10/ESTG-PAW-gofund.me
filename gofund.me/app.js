@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var paypal = require('paypal-rest-sdk');
 
 require('./controllers/passport')(passport);
 
@@ -15,6 +16,12 @@ mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/users', {useNewUrlParser: true})
   .then(() => console.log('Connection successful'))
   .catch((err) => console.error(err));
+
+  paypal.configure({
+    'mode' : 'sandbox',
+    'client_id': 'AZ7AByygGhIH12QzvEEwnYo0Mjcd1JjWCkGnxV4bEGcayJpcCmWbIjZqWlkG_zY-1Xp75BcrU-CnVvjR',
+    'client_secret': 'EF6Xx5mDb29YbE1razRSCSJHBPLdEpquvORZQCDrQoP3ueYeMP5AotpDutJqi9-CUKb6TeCLXLZMHhO-'
+  });
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
