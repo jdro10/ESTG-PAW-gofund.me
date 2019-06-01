@@ -18,6 +18,10 @@ router.post('/save', function(req, res){
     donation.save(req, res);
 });
 
+router.post('/savePaypal', function(req, res){
+  donation.savePaypal(req, res);
+});
+
 router.get('/show/:id', function(req, res){
     donation.show(req, res);
 });
