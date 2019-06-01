@@ -99,6 +99,7 @@
     		<span class="close2">&times;</span>
     		<p class="tituloLogin">Create a new account:</p>
     		<br>
+            <p class="fullNameTxt">Full name: </p>
     		<p class="nomeTxt">Username: </p>
     		<p class="adressTxt">Adress: </p>
     		<p class="emailTxt">Email adress:</p>
@@ -107,6 +108,7 @@
     		<p class="passTxt">Password: </p>
     		<p class="confPassTxt">Confirm Password: </p>
 			<form  action="/users/save" method="POST">
+                <input type="textfield" id="fullName" class="fullNameInput" placeholder="Your full name" name="full_name" required>
 				<input type="textfield" id="nome" class="nomeInput" placeholder="Your username" name="username" required>
     			<input type="textfield" id="morada" class="moradaInput" placeholder="Your adress" name="morada" required>
     			<input type="textfield" id="email" class="emailInput" placeholder="Your email" name="email" required>

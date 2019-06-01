@@ -1,13 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Donation details</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/donationPage.css">
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/donationDetails.css">
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<title>Donation details</title>
 </head>
 <body>
-    <p>Value: <%= donation.montante %></p>
-    <p>Campaign: <%= donation.campanha %></p>
-    <p>Donator username: <%= donation.username %></p>
+
+<div class="topFooter">
+	<h1 class="title">Thank you for your donation!</h1>
+</div>
+
+<form action="/loginPage" method="get">
+	<button type="submit" class="done">Done</button> 
+</form>
+
+	<p class="value">Donated amount: <%= donation.montante %> €</p>
+	<p class="campaign">Campaign: <%= donation.campanha %></p>
+	<p class="donator">Donator username: <%= donation.username %></p>
+
+	<div class="bottomFooter">
+		<p class="bottomParagraphLogin">2018-2019 gofund.me Trademark</p>
+	</div>
 </body>
 </html>
