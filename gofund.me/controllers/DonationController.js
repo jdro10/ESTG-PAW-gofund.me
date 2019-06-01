@@ -43,12 +43,12 @@ donationController.save = function(req, res){
     donation.username = user;
     donation.userId = userId;
     Campanha.findOne({title: donation.campanha}, function(err, exists){
-        if(exists != null && req.user._id != exists.creatorId){
+        if(exists != null && req.user._id != exists.creatorId && exists.estado !== 'Disabled'){
             donation.save(function(err){
                 if(err){
                     console.log('Err:', err);
                 }
-                else if(donation.montante > 0 && exists.estado != 'Desativado'){  
+                else if(donation.montante > 0){  
                     console.log('Donation criada com sucesso!');
                     res.redirect("/donation/show/" + donation._id); //view para donation
                 }else{
