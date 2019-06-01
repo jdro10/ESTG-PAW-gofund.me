@@ -42,4 +42,8 @@ router.get('/makeDonation', function(req, res, next) {
   res.render("makeDonation");
 });
 
+router.get('/', function(req,res,next){
+  res.render('loginPage');
+});
+
 module.exports = router;

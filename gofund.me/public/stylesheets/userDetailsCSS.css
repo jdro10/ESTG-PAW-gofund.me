@@ -289,3 +289,28 @@
 	margin-top: 12%;
 	margin-left: 1%;
 }
+
+.myDonations{
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 20px;
+	font-weight: bold;
+	height: 6%;
+	width: 16%;
+	position: fixed;
+	top: 27%;
+	left: 79%;
+	color: black;
+	border: solid;
+	border-width: thin;
+	border-color: black;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.check{
+	position: fixed;
+	top: 24.3%;
+	right: 25%;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 32px;	
+}
