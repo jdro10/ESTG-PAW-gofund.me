@@ -17,6 +17,7 @@
 	<p class="nif">NIF: <%= user.nif %></p>
 	<p class="email">Email: <%= user.email %></p>
 	<p class="iban">IBAN: <%= user.iban %></p>
+	<p class="fullName">Full name: <%= user.fullName %></p>
 	<form action="/users/delete/<%= user._id %>" method="POST">
 		<button type="submit" class="delete">DELETE USER</button>
 		<button type="button" id="editUser" class="edit">EDIT USER</button>
