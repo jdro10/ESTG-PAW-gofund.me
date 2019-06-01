@@ -2,16 +2,36 @@
 <html lang="en">
 <head>
     <title>My donations</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/myDonationsCSS.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>My donations</h1>
-    <% if( exists.length > 0 ) { %>
-    <% for(var i = 0; i < exists.length; i++) { %>
-    <p>Campaign: <%= exists[i].campanha %> - <%= exists[i].montante %> €</p>
-    <% } %>
-    <% } else { %>
-    <p>You haven't made any donation</p>
-    <% } %>
-    <p>Total spent in donations: <%= totalGasto %> €</p>
+    <div class="topFooter">
+        <h1 class="title">My donations</h1>
+    </div>
+
+        <form action="/profile" method="GET">
+        <button type="submit" class="back">Back</button>
+    </form>
+
+    <table border="1" class="customers">
+        <thead>
+            <tr>
+                <th class="titleList">DONATIONS MADE</th>
+            </tr>
+        </thead>
+        <tbody>
+           <% if( exists.length > 0 ) { %>
+           <% for(var i = 0; i < exists.length; i++) { %>
+           <tr>
+               <td>Campaign´s name: <%= exists[i].campanha %> - Amount: <%= exists[i].montante %> €</td>
+           </tr>
+            <% } %>
+            <td class="total">Total spent in donations: <%= totalGasto %> €</td>
+            <% } else { %>
+                <p class="noDonations">You haven't made any donation</p>
+            <% } %>
+       </tbody>
+   </table>
 </body>
 </html>

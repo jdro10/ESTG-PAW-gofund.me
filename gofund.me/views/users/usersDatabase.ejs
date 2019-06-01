@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Users database</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>LIST OF REGISTERED USERS</h1>
-    <% if(users.length > 0) { %>
-    <table border="1" sytle="border-collapse: collapse;">
-      <thead>
-        <tr>
-          <th>Username</th>
-          <th>Password</th>
-          <th>Address</th>
-          <th>Email</th>
-          <th>NIF</th>
-          <th>IBAN</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for(var i = 0; i < users.length; i++) { %>
-          <tr>
-            <td><a href="/users/show/<%= users[i]._id %>"><%= users[i].username %></a></td>
-            <td><%= users[i].password %></td>
-            <td><%= users[i].morada %></td>
-            <td><%= users[i].email %></td>
-            <td><%= users[i].nif %></td>
-            <td><%= users[i].iban %></td>
-          </tr>
-        <% } %>
-      </tbody>
-    </table>
-    <% }else{ %>
-    <h1>Currently there are no registed users</h1>
-    <% } %>
-  </body>
+<head>
+  <title>Users database</title>
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/usersDatabaseCSS.css">
+</head>
+<body>
+  <div class="topFooter">
+       <h1 class="title">LIST OF REGISTERED USERS</h1>
+  </div>
+
+  <form action="/loginPage" method="GET">
+    <button type="submit" class="back">Back to menu</button>
+  </form>
+
+  <% if(users.length > 0) { %>
+  <table border="1" class="customers">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>NIF</th>
+        <th>IBAN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < users.length; i++) { %>
+      <tr>
+        <td><a href="/users/show/<%= users[i]._id %>"><%= users[i].username %></a></td>
+        <td><%= users[i].password %></td>
+        <td><%= users[i].morada %></td>
+        <td><%= users[i].email %></td>
+        <td><%= users[i].nif %></td>
+        <td><%= users[i].iban %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+  <% }else{ %>
+  <h1>Currently there are no registed users</h1>
+  <% } %>
+</body>
 </html>

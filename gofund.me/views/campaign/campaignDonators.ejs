@@ -1,16 +1,37 @@
-<!DOCTYPE html>
+<!DOCTYPE html>	
 <html lang="en">
 <head>
-    <title>Campaign donators</title>
+	<title>Campaign donators</title>
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/campaignDonatorsCSS.css">
 </head>
 <body>
-    <h1>Campaign donators</h1>
-    <% if( existsDonator.length > 0 ) { %>
-    <% for(var i = 0; i < existsDonator.length; i++) { %>
-    <p>Donator username: <%= existsDonator[i].username %></p>
-    <% } %>
-    <% } else { %>
-    <p>There are no donators yet</p>
-    <% } %>
+	<div class="topFooter">
+		<h1 class="title">Campaign donators</h1>	
+	</div>
+
+	<form action="/campaign" method="GET">
+		<button type="submit" class="back">Back</button>
+	</form>
+
+	<table border="1" class="customers">
+		<thead>
+			<tr>
+				<th class="titleList">DONATOR'S LIST</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% if( existsDonator.length > 0 ) { %>
+			<% for(var i = 0; i < existsDonator.length; i++) { %>
+			<tr>
+				<td><%= existsDonator[i].username %></td>
+			</tr>
+			<% } %>
+			<% } else { %>
+				<p class="noDonators">Ups! There are no donators yet...</p>
+			<% } %>
+		</tbody>
+	</table>
 </body>
 </html>

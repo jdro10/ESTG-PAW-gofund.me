@@ -1,10 +1,10 @@
 .customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
   position: fixed;
   top: 18%;
-  left: 0%;
+  left: 5%;
   overflow-y: scroll; 
 }
 

@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Campaign</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
+    <title>Campaign</title> 
     <link rel="stylesheet" type="text/css" href="/stylesheets/campaignDetailsCSS.css">
     <script type="text/javascript" src="javascripts/loginJS.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 </head>
 
 <body class="topFooter">
 	<h1 class="title">Campaign details</h1>
-    <p class="titulo">Title: <%= campanha.title %> | State: <%= campanha.estado %></p>
-    <p class="desc">Description: <%= campanha.descricao %> | Creator: <%= campanha.creatorUsername %></p>
+    <p class="titulo">Title: <%= campanha.title %></p>
+    <p class="state">State: <%= campanha.estado %></p>
+    <p class="desc">Description: <%= campanha.descricao %></p>
+    <p class="creator">Creator: <%= campanha.creatorUsername %></p>
     <p class="val">Value to reach: <%= campanha.valorAtingir %> €</p>
     <p class="valCurrent" id="valCurrent">Current value: <%= campanha.valorCorrente %> €</p>
-    <p class="iban">IBAN: <%= campanha.iban %> | Responsible: <%= campanha.responsavel1 %></p>
-    <p class="type">Type: <%= campanha.type %> | Donations percentage: <%= (campanha.valorCorrente * 100) / campanha.valorAtingir %> %</p>
+    <p class="iban">IBAN: <%= campanha.iban %></p>
+    <p class="responsible">Responsible: <%= campanha.responsavel1 %></p>
+    <p class="type">Type: <%= campanha.type %></p>
+    <p class="percentage">Donations percentage: <%= (campanha.valorCorrente * 100) / campanha.valorAtingir %> %</p>
 
     <form action="/loginPage" method="get">
         <button type="submit" class="home">Home</button>
@@ -31,7 +35,7 @@
     <% } %>
 
     <form action="/campaign/campaignDonators/<%= campanha._id %>" method="GET">
-        <button type="submit">SEE ALL DONATORS</button>
+        <button type="submit" class="seeDonators">SEE ALL DONATORS</button>
     </form>
 
     <div class="bottomFooter">

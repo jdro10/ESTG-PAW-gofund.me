@@ -5,6 +5,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" type="text/css" href="stylesheets/campaignList.css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="images/favicon-16x16.png"/>
   </head>
   <body>
 
@@ -20,7 +21,7 @@
       <thead>
         <tr>
           <th>Description</th>
-          <th>Value to reach</th>
+          <th>Target value</th>
           <th>IBAN</th>
           <th>Responsibles</th>
           <th>Title</th>
@@ -32,7 +33,7 @@
         <% for(var i = 0; i < campanhas.length; i++) { %>
           <tr>
             <td><a href="/campaign/show/<%= campanhas[i]._id %>"><%= campanhas[i].descricao %></a></td>
-            <td><%= campanhas[i].valorAtingir %></td>
+            <td><%= campanhas[i].valorAtingir %> €</td>
             <td><%= campanhas[i].iban %></td>
             <td><%= campanhas[i].responsaveis %></td>
             <td><%= campanhas[i].title %></td>
