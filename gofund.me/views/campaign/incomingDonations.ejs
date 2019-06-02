@@ -18,7 +18,8 @@
 	<table border="1" class="customers">
 		<thead>
 			<tr>
-				<th>Incoming donations</th>
+				<th class="t1">Accept donations</th>
+				<th class="t2">Decline donations</th>
 			</tr>
 		</thead>
 
@@ -28,7 +29,7 @@
 			<tr>
 				<% if(loggedUser === campanhaCreator) { %>
 				<form action="/donation/approve/<%= incDonators[i]._id %>" method="POST">
-					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">ACEPT</button></td>
+					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">ACCEPT</button></td>
 				</form>
 				<form action="/donation/cancel/<%= incDonators[i]._id %>" method="POST">
 					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">CANCEL</button></td>
