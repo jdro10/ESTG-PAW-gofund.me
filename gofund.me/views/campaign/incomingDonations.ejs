@@ -2,23 +2,32 @@
 <html lang="en">
 <head>
 	<title>Incoming donations</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/campaignList.css">
+	<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" type="image/png" href="/images/favicon-16x16.png"/>
 </head>
 <body>
-    <h1>Incoming donations</h1>
+	<div class="topFooter">
+		<h1 class="title">Incoming donations</h1>
+	</div>
+
+	<form action="/loginPage" method="get">
+		<button type="submit" class="back">Back to menu</button> 
+	</form>
 
 	<table border="1" class="customers">
 		<thead>
 			<tr>
-				<th class="titleList">Incoming donations</th>
+				<th>Incoming donations</th>
 			</tr>
 		</thead>
 
 		<tbody>
-            <% for(var i = 0; i < incDonators.length; i++) { %>
-            <% if(incDonators[i].estado === 'processing') { %>
+			<% for(var i = 0; i < incDonators.length; i++) { %>
+			<% if(incDonators[i].estado === 'processing') { %>
 			<tr>
-                <form action="/campaign/approve/<%= incDonators[i]._id %>" method="POST">
-                <td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">ACEPT</button></td>
+				<form action="/campaign/approve/<%= incDonators[i]._id %>" method="POST">
+					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">ACEPT</button></td>
 				</form>
 				<form action="/campaign/cancel/<%= incDonators[i]._id %>" method="POST">
 					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">CANCEL</button></td>

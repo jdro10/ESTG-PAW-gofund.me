@@ -28,7 +28,7 @@
   width: 20%;
   position: fixed;
   margin-top: 18%;
-  left: 40%;
+  left: 41%;
   background-color: #1a72e7;
   color: white;
   border: solid;
@@ -41,9 +41,10 @@
   font-size: 27px;
   font-weight: bold;
   color: black;
-  width: 500px;
+  width: 300px;
+  text-align: center;
   margin-top: 12%;
-  margin-left: 41%; 
+  margin-left: 42%; 
 }
 
 .campaign{
@@ -51,7 +52,8 @@
   font-size: 27px;
   font-weight: bold;
   color: black;
-  width: 500px;
+  width: 250px;
+  text-align: center;
   position: absolute;
   margin-top: 2%;
   margin-left: 43%; 
@@ -62,10 +64,11 @@
   font-size: 27px;
   font-weight: bold;
   color: black;
-  width: 500px;
+  width: 380px;
+  text-align: center;
   position: absolute;
   margin-top: 7%;
-  margin-left: 39%;
+  margin-left: 39.1%;
 }
 
 .bottomParagraphLogin{
