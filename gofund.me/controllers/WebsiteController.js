@@ -19,8 +19,18 @@ websiteController.dashboard = function (req, res) {
                         var totalCampanhas = campanhas.length;
                         var totalDonations = donations.length;
                         var totalMontanteDonations = 0;
+                        var totalDonationsProcessing = 0;
+                        var totalDonationsCanceled = 0;
                         for(var i = 0; i < donations.length; i++){
-                            totalMontanteDonations += donations[i].montante;
+                            if(donations[i].estado === 'processed'){
+                                totalMontanteDonations += donations[i].montante;
+                            }
+                            if(donations[i].estado === 'processing'){
+                                totalDonationsProcessing += donations[i].montante;
+                            }
+                            if(donations[i].estado === 'canceled'){
+                                totalDonationsCanceled += donations[i].montante;
+                            }
                         }
 
                         var active = 0;
@@ -34,7 +44,9 @@ websiteController.dashboard = function (req, res) {
                             }
                         }
 
-                        res.render('../views/dashboard', { totalUsers: totalUsers, totalCampanhas: totalCampanhas, totalDonations: totalDonations, totalMontanteDonations : totalMontanteDonations, active:active, disabled:disabled})
+                        res.render('../views/dashboard', { totalUsers: totalUsers, totalCampanhas: totalCampanhas, totalDonations: totalDonations,
+                                   totalMontanteDonations : totalMontanteDonations, active:active, disabled:disabled, 
+                                    totalDonationsProcessing:totalDonationsProcessing, totalDonationsCanceled:totalDonationsCanceled});
                     });
                 }
             });
