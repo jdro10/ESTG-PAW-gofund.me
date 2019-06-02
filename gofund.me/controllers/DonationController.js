@@ -133,7 +133,7 @@ donationController.approve = function (req, res) {
             if (err) {
                 console.log(err);
             }
-            res.redirect('../');
+            res.redirect('/campaign');
         });
 };
 
@@ -143,7 +143,7 @@ donationController.cancel = function (req, res) {
             if (err) {
                 console.log(err);
             }
-            res.redirect('../');
+            res.redirect('/campaign');
         });
 }
 

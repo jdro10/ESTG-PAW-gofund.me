@@ -26,6 +26,7 @@
 			<% for(var i = 0; i < incDonators.length; i++) { %>
 			<% if(incDonators[i].estado === 'processing') { %>
 			<tr>
+				<% if(loggedUser === campanhaCreator) { %>
 				<form action="/donation/approve/<%= incDonators[i]._id %>" method="POST">
 					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">ACEPT</button></td>
 				</form>
@@ -33,7 +34,7 @@
 					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">CANCEL</button></td>
 				</form>
 			</tr>
-			<% }} %>
+			<% }}} %>
 		</tbody>
 	</table>
 </body>

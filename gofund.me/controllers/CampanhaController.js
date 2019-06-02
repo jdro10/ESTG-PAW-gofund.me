@@ -55,11 +55,13 @@ campanhaController.incDonators = function (req, res) {
             console.log('Error:', err);
         }
         else {
+            var loggedUser = req.user._id;
+            var campanhaCreator = campanha.creatorId;
             Donation.find({ campanha: campanha.title }).exec(function (err, incDonators) {
                 if (incDonators == null) {
                     res.redirect('../');
                 } else {
-                    res.render("../views/campaign/incomingDonations", { incDonators: incDonators });
+                    res.render("../views/campaign/incomingDonations", { incDonators: incDonators, loggedUser:loggedUser, campanhaCreator:campanhaCreator});
                 }
             });
         }

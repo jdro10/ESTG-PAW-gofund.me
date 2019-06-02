@@ -42,7 +42,6 @@ router.get('/dashboard', authenticatedAdmin, function(req, res, next) {
   WebsiteController.dashboard(req, res);
 });
 
-
 router.get('/makeDonation', authenticated, function(req, res, next) {	 
   res.render("makeDonation");
 });
