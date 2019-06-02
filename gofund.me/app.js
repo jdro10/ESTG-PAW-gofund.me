@@ -19,8 +19,8 @@ mongoose.connect('mongodb://localhost/users', {useNewUrlParser: true})
 
   paypal.configure({
     'mode' : 'sandbox',
-    'client_id': 'AZ7AByygGhIH12QzvEEwnYo0Mjcd1JjWCkGnxV4bEGcayJpcCmWbIjZqWlkG_zY-1Xp75BcrU-CnVvjR',
-    'client_secret': 'EF6Xx5mDb29YbE1razRSCSJHBPLdEpquvORZQCDrQoP3ueYeMP5AotpDutJqi9-CUKb6TeCLXLZMHhO-'
+    'client_id': '',
+    'client_secret': ''
   });
 
 var indexRouter = require('./routes/index');
