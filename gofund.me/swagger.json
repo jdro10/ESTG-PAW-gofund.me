@@ -1,0 +1,97 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": " restapi",
+        "description": "rest api for donations and campaigns"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "Campaigns and Donations",
+            "description": "API for campaigns in the System"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/campanhas": {
+            "get": {
+                "tags": [
+                    "Campaigns"
+                ],
+                "summary": "get all campaigns in the system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Campaign"
+                        }
+                    }
+                }
+            }
+        },
+        "/campanhas/estado/{id}": {
+            "parameters":[
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Campaign ID that you want to see the state",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Campaigns state"
+                ],
+                "summary": "get the state of a campaign",
+                "responses": {
+                    "200": {
+                        "description": "Campaign state found",
+                        "schema": {
+                            "$ref": "#/definitions/CampaignState"
+                        }
+                    }
+                }
+            },
+        "/donation/{id}": {
+            "post": {
+                    "tags": [
+                        "Donations"
+                    ],
+                    "description": "Create a new donation in system",
+                    "parameters": [
+                        {
+                            "name": "donations",
+                            "in": "body",
+                            "description": "Donation that we want to create",
+                            "schema": {
+                                "$ref": "#/definitions/Donations"
+                            }
+                        }
+                    ],
+                    "produces": [
+                        "application/json"
+                    ],
+                    "responses": {
+                        "200": {
+                            "description": "New donation created",
+                            "schema": {
+                                "$ref": "#/definitions/Donations"
+                            }
+                        }
+                    }   
+                }
+            }
+        }
+    }
+}

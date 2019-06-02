@@ -8,6 +8,8 @@ var passport = require('passport');
 var session = require('express-session');
 var bodyParser = require('body-parser');
 var paypal = require('paypal-rest-sdk');
+var swaggerUi = require('swagger-ui-express');
+var swaggerDocument = require('./swagger.json');
 
 require('./controllers/passport')(passport);
 
@@ -51,6 +53,8 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
