@@ -34,7 +34,7 @@
   </thead>
   <tbody>
     <% for(var i = 0; i < campanhas.length; i++) { %>
-    <% if(campanhas[i].estado === 'Ativo'){ %>
+    <% if(campanhas[i].estado === 'Active'){ %>
     <tr>
       <td><a href="/campaign/show/<%= campanhas[i]._id %>"><%= campanhas[i].title %></a></td>
       <td><%= campanhas[i].descricao %></td>
