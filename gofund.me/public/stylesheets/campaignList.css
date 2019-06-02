@@ -17,20 +17,12 @@
 
 .customers tr:hover {background-color: #ddd;}
 
-.t1 {
-  padding-top: 15px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: #4CAF50;
-  color: white;
-}
-
-.t2 {
-  padding-top: 15px;
-  padding-bottom: 12px;
-  text-align: center;
-  background-color: red;
-  color: white;
+.customers th {
+	padding-top: 15px;
+	padding-bottom: 12px;
+	text-align: center;
+	background-color: #4CAF50;
+	color: white;
 }
 
 .topFooter{
