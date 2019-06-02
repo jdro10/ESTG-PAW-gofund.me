@@ -33,6 +33,12 @@
 			<p class="check">Check out all your donations here =></p>
 			<button type="submit" class="myDonations">View my donations</button>
 		</form>
+
+		<% if(user.username === 'admin') { %>
+		<form action="/dashboard" method="GET">
+			<button>Dashboard</button>
+		</form>
+		<% } %>
 	</div>
 
 	<div id="myModal" class="modal">
