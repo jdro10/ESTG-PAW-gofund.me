@@ -1,4 +1,4 @@
-.topFooter{
+	.topFooter{
 	position: relative;
 	width: 100%;
 	margin: auto;
@@ -35,8 +35,8 @@
 	width: 37%;
 	height: 5%;
 	position: fixed;
-	top: 25%;
-	margin-left: 2%;
+	top: 34%;
+	margin-left: 17%;
 	border-radius: 3px;
 	border: solid;
 	border-width: thin;
@@ -49,8 +49,8 @@
 	width: 37%;
 	height: 5%;
 	position: fixed;
-	top: 32%;
-	margin-left: 2%;
+	top: 42%;
+	margin-left: 17%;
 	border-radius: 3px;
 	border: solid;
 	border-width: thin;
@@ -63,49 +63,14 @@
 	width: 37%;
 	height: 20%;
 	position: fixed;
-	top: 40%;
-	margin-left: 2%;
+	top: 50%;
+	margin-left: 17%;
 	border-radius: 3px;
 	border: solid;
 	border-width: thin;
 	font-family: 'Arial', "Helvetica Neue" , Helvetica;
 	text-align: left;
 	font-size: 12;
-}
-
-.p1{
-	position: fixed;
-	top: 62%;
-	margin-left: 2%;
-	font-size: 12;
-	font-weight: bold;
-	font-family: 'Arial', "Helvetica Neue" , Helvetica;
-}
-
-.id1{
-	width: 13%;
-	height: 3%;
-	position: fixed;
-	top: 68%;
-	margin-left: 2%;
-	font-size: 12;
-	font-family: 'Arial', "Helvetica Neue" , Helvetica;
-	border-radius: 3px;
-	border: solid;
-	border-width: thin;
-}
-
-.id2{
-	width: 13%;
-	height: 3%;
-	position: fixed;
-	top: 68%;
-	margin-left: 19%;
-	font-size: 12;
-	font-family: 'Arial', "Helvetica Neue" , Helvetica;
-	border-radius: 3px;
-	border: solid;
-	border-width: thin;
 }
 
 .createButton{
@@ -145,36 +110,12 @@
 	background-size: cover;
 }
 
-.photoDef{
-	background-image: url(../images/personIcon.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	width: 20%;
-	height: 30%;
-	margin-left: 69%;
-	margin-top: 11.6%;
-}
-
-.uploadButton{
-	margin-left: 70.5%;
-	margin-top: 0.8%;
-	width: 17%;
-	height: 3%;
-	border-radius: 3px;
-	border: solid;
-	border-width: thin;
-	background-color: grey;
-	color: white;
-	font-size: 12px;
-}
-
 .campTitle{
-	width: 27%;
+	width: 37%;
 	height: 5%;
 	position: fixed;
-	top: 25%;
-	margin-left: 41%;
+	top: 26%;
+	margin-left: 17%;
 	border-radius: 3px;
 	border: solid;
 	border-width: thin;
