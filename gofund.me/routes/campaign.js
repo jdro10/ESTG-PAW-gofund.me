@@ -26,14 +26,6 @@ router.get('/incomingDonations/:id', function(req, res, next) {
   campanha.incDonators(req, res);
 });
 
-router.post('/approve/:id', function(req, res, next) {
-  campanha.approve(req, res);
-});
-
-router.post('/cancel/:id', function(req, res, next) {
-  campanha.cancel(req, res);
-});
-
 router.post('/save', authenticated, function(req, res){
   campanha.save(req, res);
 });

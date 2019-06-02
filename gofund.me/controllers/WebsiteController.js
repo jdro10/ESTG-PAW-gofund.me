@@ -5,6 +5,8 @@ var User = require('../models/User');
 
 var websiteController = {};
 
+//Dashboard do administrador do website
+//Contém várias estatisticas do website
 websiteController.dashboard = function (req, res) {
     User.find({}).exec(function (err, users) {
         if (err) {

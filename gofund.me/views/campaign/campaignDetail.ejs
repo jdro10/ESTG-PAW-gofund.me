@@ -17,9 +17,8 @@
     <p class="val">Value to reach (€): <%= campanha.valorAtingir %></p>
     <p class="valCurrent" id="valCurrent">Current value (€): <%= campanha.valorCorrente %></p>
     <p class="iban">IBAN: <%= campanha.iban %></p>
-    <p class="responsible">Responsible: <%= campanha.responsavel1 %></p>
     <p class="type">Type: <%= campanha.type %></p>
-    <p class="percentage">Target percentage: <%= (campanha.valorCorrente * 100) / campanha.valorAtingir %></p>
+    <p class="percentage">Target percentage (%): <%= (campanha.valorCorrente * 100) / campanha.valorAtingir %></p>
 
     <form action="/loginPage" method="get">
         <button type="submit" class="home">Home</button>
