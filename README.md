@@ -9,6 +9,7 @@ Programação Ambiente Web
 * JavaScript  
 * EJS  
 * MongoDB  
+* Swagger
 
 ### Autores:
 * Jorge Oliveira  
