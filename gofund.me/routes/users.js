@@ -30,7 +30,7 @@ router.get('/show/:id', authenticated, function(req, res){
   user.show(req, res);
 });
 
-router.post('/save', authenticated, function(req, res){
+router.post('/save', function(req, res){
   user.save(req, res);
 });
 
