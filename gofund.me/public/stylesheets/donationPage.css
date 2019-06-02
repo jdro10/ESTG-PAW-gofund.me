@@ -28,7 +28,7 @@
 	width: 38%;
 	height: 3%;
 	position: fixed;
-	top: 30%;
+	top: 22%;
 	left: 34%;
 }
 
@@ -40,7 +40,7 @@
 	width: 38%;
 	height: 3%;
 	position: fixed;
-	top: 43%;
+	top: 30%;
 	left: 34%;
 }
 
@@ -51,7 +51,7 @@
 	color: purple;
 	width: 400px;
 	position: fixed;
-	top: 26.5%;
+	top: 18.5%;
 	left: 20%;	
 }
 
@@ -62,7 +62,7 @@
 	color: purple;
 	width: 400px;
 	position: fixed;
-	top: 39.5%;
+	top: 26.5%;
 	left: 75%;	
 }
 
@@ -73,7 +73,7 @@
 	color: black;
 	width: 400px;
 	position: fixed;
-	top: 48.5%;
+	top: 34.5%;
 	left: 42%;		
 }
 
@@ -87,7 +87,7 @@
 	color: white;
 	font-size: 14px;
 	position: fixed;
-	margin-top: 32%;
+	top: 45%;
 	margin-left: 33.5%;
 }
 
@@ -126,4 +126,53 @@
 	position: fixed;
 	bottom: 2.2%;
 	left: 3%;
+}
+
+.otherPay{
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 30px;
+	font-weight: bold;
+	color: black;
+	width: 400px;
+	position: fixed;
+	top: 64.5%;
+	left: 5%;	
+}
+
+.paypalValue{
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 64%;
+	left: 34%;
+}
+
+.paypalName{
+	border-style: solid;
+	border-width: thin;
+	border-color: black;
+	border-radius: 3px;
+	width: 38%;
+	height: 3%;
+	position: fixed;
+	top: 70%;
+	left: 34%;
+}
+
+.paypal{
+	height: 5%;
+	width: 38.3%;
+	border-radius: 5px;
+	border: solid;
+	border-width: thin;
+	background-color: #1a72e7;
+	color: white;
+	font-size: 14px;
+	position: fixed;
+	top: 76%;
+	margin-left: 33.5%;
 }

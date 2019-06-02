@@ -278,3 +278,28 @@
 	top: 65%;
 	margin-left: 17%;
 }
+
+.incoming{
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 20px;
+	font-weight: bold;
+	height: 6%;
+	width: 16%;
+	position: fixed;
+	top: 22.8%;
+	left: 79%;
+	color: black;
+	border: solid;
+	border-width: thin;
+	border-color: black;
+	background-color: transparent;
+	border-radius: 3px;
+}
+
+.incomingTxt{
+	position: fixed;
+	top: 20.3%;
+	right: 25%;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 32px;
+}

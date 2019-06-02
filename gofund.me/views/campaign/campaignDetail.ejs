@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/campaignDetailsCSS.css">
     <script type="text/javascript" src="/javascripts/loginJS.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon-16x16.png"/>
 </head>
 
 <body class="topFooter">
@@ -25,9 +26,9 @@
     </form>
 
     <% if(campanha.valorCorrente > 0) { %>
-        <form action="/campaign/update/<%= campanha._id %>" method="POST">
-            <button type="submit" id="desativar" class="delete">DISABLE</button>
-        </form>
+    <form action="/campaign/update/<%= campanha._id %>" method="POST">
+        <button type="submit" id="desativar" class="delete">DISABLE</button>
+    </form>
     <% } else { %>
     <form action="/campaign/delete/<%= campanha._id %>" method="POST">
         <button type="submit" id="deleteBT" class="delete">DELETE</button>
@@ -38,11 +39,13 @@
         <button type="submit" class="seeDonators">SEE ALL DONATORS</button>
     </form>
 
+    <p class="incomingTxt">Check out your incoming donations here =></p>
+    <form action="/campaign/incomingDonations/<%= campanha._id %>" method="GET">
+        <button type="submit" class="incoming">Incoming donations</button>
+    </form>
+
     <div class="bottomFooter">
         <p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
-        <form action="/campaign/incomingDonations/<%= campanha._id %>" method="GET">
-            <button type="submit">Incoming donations</button>
-        </form>
     </div>
 
 </body>

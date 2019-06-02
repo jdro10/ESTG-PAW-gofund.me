@@ -2,16 +2,30 @@
 <html lang="en">
 <head>
 	<title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/statsCSS.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="/images/favicon-16x16.png"/>
 </head>
 <body>
-    <h1>WEBSITE STATS</h1>
-	<p>Total users registed in the website: <%= totalUsers %></p>
-    <p>Total campaigns in the website: <%= totalCampanhas %></p>
-    <p>Currently active campaigns in the website: <%= active %></p>
-    <p>Disabled campaigns at the moment: <%= disabled %></p>
-    <p>Total donations in the website: <%= totalDonations %></p>
-    <p>Value of all donations: <%= totalMontanteDonations %> €</p>
-    <p>Value of donations in state of processing: <%= totalDonationsProcessing %>€</p>
-    <p>Value of all canceled donations: <%= totalDonationsCanceled %>€</p>
+    <div class="topFooter">
+        <h1 class="title">WEBSITE STATS</h1>    
+    </div>
+    
+    <p class="p1">Total users registed in the website: <%= totalUsers %></p>
+    <p class="p2">Total campaigns in the website: <%= totalCampanhas %></p>
+    <p class="p3">Currently active campaigns in the website: <%= active %></p>
+    <p class="p4">Disabled campaigns at the moment: <%= disabled %></p>
+    <p class="p5">Total donations in the website: <%= totalDonations %></p>
+    <p class="p6">Value of all donations: <%= totalMontanteDonations %> €</p>
+    <p class="p7">Value of donations in state of processing: <%= totalDonationsProcessing %>€</p>
+    <p class="p8">Value of all canceled donations: <%= totalDonationsCanceled %>€</p>
+
+    <form action="/profile" method="get">
+        <button type="submit" class="back">Back to Profile</button>
+    </form>
+
+    <div class="bottomFooter">
+        <p class="bottomParagraph">2018-2019 gofund.me Trademark</p>
+    </div>
 </body>
 </html>
