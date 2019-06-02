@@ -127,4 +127,24 @@ donationController.savePaypal = function (req, res) {
     });
 };
 
+donationController.approve = function (req, res) {
+    Donation.findByIdAndUpdate(req.params.id, { $set: { estado: 'processed' } },
+        { new: true }, function (err, user) {
+            if (err) {
+                console.log(err);
+            }
+            res.redirect('../');
+        });
+};
+
+donationController.cancel = function (req, res) {
+    Donation.findByIdAndUpdate(req.params.id, { $set: { estado: 'canceled' } },
+        { new: true }, function (err, user) {
+            if (err) {
+                console.log(err);
+            }
+            res.redirect('../');
+        });
+}
+
 module.exports = donationController;

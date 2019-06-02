@@ -34,4 +34,13 @@ router.get('/show/:id', authenticated, function(req, res){
     donation.show(req, res);
 });
 
+router.post('/approve/:id', function(req, res, next) {
+  donation.approve(req, res);
+});
+
+router.post('/cancel/:id', function(req, res, next) {
+  donation.cancel(req, res);
+});
+
+
 module.exports = router;

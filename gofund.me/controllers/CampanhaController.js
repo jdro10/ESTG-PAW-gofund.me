@@ -66,26 +66,6 @@ campanhaController.incDonators = function (req, res) {
     });
 };
 
-campanhaController.approve = function (req, res) {
-    Donation.findByIdAndUpdate(req.params.id, { $set: { estado: 'processed' } },
-        { new: true }, function (err, user) {
-            if (err) {
-                console.log(err);
-            }
-            res.redirect('../');
-        });
-};
-
-campanhaController.cancel = function (req, res) {
-    Donation.findByIdAndUpdate(req.params.id, { $set: { estado: 'canceled' } },
-        { new: true }, function (err, user) {
-            if (err) {
-                console.log(err);
-            }
-            res.redirect('../');
-        });
-}
-
 //mostra detalhes de uma campanha
 
 campanhaController.show = function (req, res) {
