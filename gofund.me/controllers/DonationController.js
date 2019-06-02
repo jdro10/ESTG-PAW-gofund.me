@@ -43,6 +43,8 @@ donationController.save = function(req, res){
     var userId = req.user._id;
     donation.username = user;
     donation.userId = userId;
+    donation.estado = 'processing';
+    console.log(donation.estado);
     Campanha.findOne({title: donation.campanha}, function(err, exists){
         if(exists != null && req.user._id != exists.creatorId && exists.estado !== 'Disabled'){
             donation.save(function(err){
