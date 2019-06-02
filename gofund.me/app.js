@@ -28,6 +28,8 @@ var usersRouter = require('./routes/users');
 var campaignRouter = require('./routes/campaign');
 var authenticationRouter = require('./routes/authentication')(passport);
 var donationRouter = require('./routes/donation');
+var campanhaRouter = require('./api/routes/campanha');
+var donateRouter = require('./api/routes/donation');
 
 var app = express();
 
@@ -55,6 +57,8 @@ app.use('/users', usersRouter);
 app.use('/campaign', campaignRouter);
 app.use('/auth', authenticationRouter);
 app.use('/donation', donationRouter);
+app.use('/api/campanhas', campanhaRouter);
+app.use('/api/donate', campanhaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
