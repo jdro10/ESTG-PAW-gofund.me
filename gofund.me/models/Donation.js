@@ -10,6 +10,7 @@ var DonationSchema = new mongoose.Schema({
     campanha: String,
     montante: Number,
     userId: String,
+    estado: { type: String, enum: ['canceled', 'processing','processed'] }
 });
 
 module.exports = mongoose.model('Donation', DonationSchema);

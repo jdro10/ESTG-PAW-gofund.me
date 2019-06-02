@@ -49,6 +49,43 @@ campanhaController.listDonators = function (req, res) {
     });
 };
 
+campanhaController.incDonators = function (req, res) {
+    Campanha.findOne({ _id: req.params.id }).exec(function (err, campanha) {
+        if (err) {
+            console.log('Error:', err);
+        }
+        else {
+            Donation.find({ campanha: campanha.title }).exec(function (err, incDonators) {
+                if (incDonators == null) {
+                    res.redirect('../');
+                } else {
+                    res.render("../views/campaign/incomingDonations", { incDonators: incDonators });
+                }
+            });
+        }
+    });
+};
+
+campanhaController.approve = function (req, res) {
+    Donation.findByIdAndUpdate(req.params.id, { $set: { estado: 'processed' } },
+        { new: true }, function (err, user) {
+            if (err) {
+                console.log(err);
+            }
+            res.redirect('../');
+        });
+};
+
+campanhaController.cancel = function (req, res) {
+    Donation.findByIdAndUpdate(req.params.id, { $set: { estado: 'canceled' } },
+        { new: true }, function (err, user) {
+            if (err) {
+                console.log(err);
+            }
+            res.redirect('../');
+        });
+}
+
 //mostra detalhes de uma campanha
 
 campanhaController.show = function (req, res) {
@@ -62,10 +99,14 @@ campanhaController.show = function (req, res) {
                     campanha.valorCorrente = 0;
                     res.render("../views/campaign/campaignDetail", { campanha: campanha });
                 } else {
+                    console.log(req.user._id);
+                    console.log(campanha.creatorId);
                     console.log('length: ' + exists.length);
                     var montante = 0;
                     for (var i = 0; i < exists.length; i++) {
-                        montante += exists[i].montante;
+                        if (exists[i].estado === 'processed') {
+                            montante += exists[i].montante;
+                        }
                     }
                     campanha.valorCorrente = montante;
                     res.render("../views/campaign/campaignDetail", { campanha: campanha });

@@ -1,0 +1,31 @@
+<!DOCTYPE html>	
+<html lang="en">
+<head>
+	<title>Incoming donations</title>
+</head>
+<body>
+    <h1>Incoming donations</h1>
+
+	<table border="1" class="customers">
+		<thead>
+			<tr>
+				<th class="titleList">Incoming donations</th>
+			</tr>
+		</thead>
+
+		<tbody>
+            <% for(var i = 0; i < incDonators.length; i++) { %>
+            <% if(incDonators[i].estado === 'processing') { %>
+			<tr>
+                <form action="/campaign/approve/<%= incDonators[i]._id %>" method="POST">
+                <td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">ACEPT</button></td>
+				</form>
+				<form action="/campaign/cancel/<%= incDonators[i]._id %>" method="POST">
+					<td><%= incDonators[i].username %> - <%= incDonators[i].montante %> € <button type="submit">CANCEL</button></td>
+				</form>
+			</tr>
+			<% }} %>
+		</tbody>
+	</table>
+</body>
+</html>

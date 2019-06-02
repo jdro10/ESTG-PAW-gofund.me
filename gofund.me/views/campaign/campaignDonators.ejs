@@ -24,10 +24,11 @@
 		<tbody>
 			<% if( existsDonator.length > 0 ) { %>
 			<% for(var i = 0; i < existsDonator.length; i++) { %>
+			<% if( existsDonator[i].estado === 'processed') { %>
 			<tr>
 				<td><%= existsDonator[i].username %> - <%= existsDonator[i].montante %> €</td>
 			</tr>
-			<% } %>
+			<% }} %>
 			<% } else { %>
 				<p class="noDonators">Ups! There are no donators yet...</p>
 			<% } %>
